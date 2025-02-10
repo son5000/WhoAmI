@@ -1,0 +1,14 @@
+.header {
+    height: 18px;
+    padding-inline: 10px;
+    background-color: rgb(148, 144, 144);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;   
+}
+
+.header > *{
+    height: 100%;
+    font-size: 12px;
+}

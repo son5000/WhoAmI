@@ -1,0 +1,23 @@
+.content { 
+    grid-area: content;
+    position: relative;
+}
+
+:global(.dark) .content {
+    color: var(--white);
+}
+
+.content > span {
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    right: 300px;
+    bottom: 300px;
+    color: var(--white);
+}
+
+.content > span::before{
+    display: block;
+    content: url(/images/Section/basket_icon.png);
+    z-index: 9999;
+}

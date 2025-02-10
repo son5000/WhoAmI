@@ -1,0 +1,41 @@
+.themeButton {
+    width: 100px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.themeButton > button {
+    cursor: pointer;
+    width: 40px;
+    text-indent: -9999px;
+    background: url(/images/Talk/lightmode.png) no-repeat center / contain;
+}
+
+.themeButton > button::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: url(/images/Talk/sun.png) no-repeat center / cover;
+    top: 50%;
+    left: 15%;
+    transform: translate( -50% , -50%);
+}
+
+.themeButton > button::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: url(/images/Talk/moon.png) no-repeat center / cover;    
+    top: 50%;
+    right: 5%;
+    transform: translate( -50% , -50%);
+}
+
+ .themeButton > button.active {
+    background-image : url(/images/Talk/darkmode.png);
+}

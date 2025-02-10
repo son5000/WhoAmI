@@ -1,0 +1,67 @@
+.content {
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+    background-color: white;
+    min-width: 280px;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.title > p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0eded ;
+}
+
+.windowButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+    margin-bottom: 30px;
+}
+.windowButtons > button {
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    font-size: 0.1px;
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+}
+
+.windowButtons > button:nth-of-type(1){
+    background-image: url(/images/Talk/최소화-회.png);
+}
+.windowButtons > button:nth-of-type(2){
+    background-image: url(/images/Talk/최대화-회.png);
+}
+.windowButtons > button:nth-of-type(3){
+    background-image: url(/images/Talk/닫기-회.png);
+}
+.windowButtons > button:nth-of-type(1):hover{
+    background-image: url(/images/Talk/최소화-검.png);
+}
+.windowButtons > button:nth-of-type(2):hover{
+    background-image: url(/images/Talk/최대화-검.png);
+}
+.windowButtons > button:nth-of-type(3):hover{
+    background-image: url(/images/Talk/닫기-검.png);
+}

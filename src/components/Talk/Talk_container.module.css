@@ -1,0 +1,11 @@
+.container {
+    grid-area: author;
+    min-width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+:global(.dark) .container{
+    background-color: var(--theme-light-content);
+}
+

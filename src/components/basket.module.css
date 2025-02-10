@@ -1,0 +1,155 @@
+
+.overlay {
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    width: 50vw;
+    max-width: 800px;
+    min-width: 600px;
+    height: 600px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: url(/images/Section/basket_header.png) no-repeat left 0 top 0 / contain;
+    text-align: center;
+    height: 25px;
+    border-bottom: #dadbdc 1px solid;
+}
+
+.header > p {
+    margin-left: 90px;
+    font-size: 12px;
+    line-height: 20px;
+    padding-inline: 10px;
+    background-color: rgb(225, 193, 235);
+}
+
+.windowButtons {
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    margin-right: 10px;
+    margin-left: auto;
+}
+.windowButtons > button {
+    text-indent: -9999px;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+}
+.windowButtons > button:nth-of-type(1){
+    background-image: url(/images/Talk/최소화-검.png);
+}
+.windowButtons >  button:nth-of-type(2){
+    background-image: url(/images/Talk/최대화-검.png);
+}
+.windowButtons >  button:nth-of-type(3){
+    background-image: url(/images/Talk/닫기-검.png);
+}
+
+.content > p {
+    line-height: 24px;
+    border-bottom: #dadbdc 1px solid;
+}
+
+.content > p > mark {
+    font-size: 14px;
+    height: 23px;
+    padding-inline: 15px;
+    display: inline-block;
+    color: var(--white);
+    background-color: #0066b4;
+}
+
+.section {
+    display: flex;
+    width: 100%;
+}
+
+.list {
+    min-width: 160px;
+    margin-top: 30px;
+    font-size: 12px;
+    border-right: 1px solid #f7f7f7;
+    line-height: 40px;
+}
+
+.list > li {
+    position: relative;
+    padding-inline: 40px 10px; 
+}
+
+.list > li:hover {
+    background-color: #cde8ff  ;
+}
+
+.list > li::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(-50% , -45%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    content: "";
+}   
+
+.list > li:nth-of-type(1):before {
+    background-image: url(/images/Section/즐겨찾기_icon.png);
+}
+.list > li:nth-of-type(2):before {
+    background-image: url(/images/Section/클라우드_icon.png);
+}
+.list > li:nth-of-type(3):before {
+    background-image: url(/images/Section/시스템_icon.png);
+}
+.list > li:nth-of-type(4):before {
+    background-image: url(/images/Section/네트워크_icon.png);
+}
+.list > li:nth-of-type(5):before {
+    background-image: url(/images/Section/리눅스_icon.png);
+}
+
+.main {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.main > p {
+    padding-inline: 15px;
+    font-size: 14px;
+    color: #4c607a;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.main > p > span {
+    display: block;
+    width: 33%;
+}
+
+.main > p > span:not(:last-of-type) {
+    border-right: 1px solid #dadbdc;
+}
