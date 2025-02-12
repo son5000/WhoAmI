@@ -2,6 +2,11 @@
     font-size: 14px;
     color: #a5a4a4;
 }
+
+:global(.dark) .list {
+    color: var(--theme-dark-sub)
+}
+
 .list > li {
     line-height: 30px;
     border-bottom: 1px solid #f0eded;
@@ -9,6 +14,10 @@
     height: 30px;
     overflow: hidden;
     cursor: pointer;
+}
+
+:global(.dark) .list > li {
+    border-bottom: 1px solid var(--theme-dark-sub);
 }
 
 .list > li::after {
@@ -40,35 +49,64 @@
     font-size: 12px;
 }
 
-.list > li:nth-of-type(4) > ul > li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    line-height: 70px;
+:global(.dark) .list > li > ul > li {
+    color: var(--theme-dark-font);
 }
 
-.list > li:nth-of-type(4) > ul > li::before {
+.list > li:nth-of-type(n+3) > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 60px;
+}
+
+.list > li:nth-of-type(n+3) > ul > li::before {
     content: "";
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .list > li:nth-of-type(4) > ul > li:nth-of-type(1):before {
-    background : url(/images/Talk/js-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/js-icon.png);
 }
 .list > li:nth-of-type(4) > ul > li:nth-of-type(2):before {
-    background : url(/images/Talk/html-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/html-icon.png); 
 }
 .list > li:nth-of-type(4) > ul > li:nth-of-type(3):before {
-    background : url(/images/Talk/css-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/css-icon.png); 
 }
 .list > li:nth-of-type(4) > ul > li:nth-of-type(4):before {
-    background : url(/images/Talk/react-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/react-icon.png);
 }
 .list > li:nth-of-type(4) > ul > li:nth-of-type(5):before {
-    background : url(/images/Talk/nextjs-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/nextjs-icon.png); 
+}
+:global(.dark) .list > li:nth-of-type(4) > ul > li:nth-of-type(5):before {
+    background-image : url(/images/Talk/nextjs-icon-white.png); 
 }
 .list > li:nth-of-type(4) > ul > li:nth-of-type(6):before {
-    background : url(/images/Talk/expressjs-icon.png) , no-repeat center / auto;
+    background-image : url(/images/Talk/expressjs-icon.png); 
+}
+
+.list > li:nth-of-type(5) > ul > li:nth-of-type(1):before {
+    background-image : url(/images/Talk/postgresql-icon.png);
+}
+:global(.dark) .list > li:nth-of-type(5) > ul > li:nth-of-type(1):before {
+    background-image : url(/images/Talk/postgresql-icon-white.png);
+}
+.list > li:nth-of-type(5) > ul > li:nth-of-type(2):before {
+    background-image : url(/images/Talk/mongoDb-icon.png); 
+}
+.list > li:nth-of-type(5) > ul > li:nth-of-type(3):before {
+    background-image : url(/images/Talk/redis-icon.png); 
+}
+.list > li:nth-of-type(5) > ul > li:nth-of-type(4):before {
+    background-image : url(/images/Talk/aws-icon.png);
+}
+.list > li:nth-of-type(5) > ul > li:nth-of-type(5):before {
+    background-image : url(/images/Talk/prisma-icon.png); 
 }

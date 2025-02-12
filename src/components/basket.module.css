@@ -1,3 +1,18 @@
+.container > span {
+    position: absolute;
+    right: 300px;
+    bottom: 300px;
+    font-size: 12px;
+    color: var(--white);
+    z-index: 9999;
+}
+
+.container > span::before {
+    content: url(/images/Section/basket_icon.png);
+    position: absolute;
+    bottom: 100%;
+    left: -20%;
+}
 
 .overlay {
     position: fixed;

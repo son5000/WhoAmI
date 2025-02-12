@@ -7,6 +7,10 @@
     justify-content: space-between;
 }
 
+:global(.dark) .nav {
+    background-color: var(--theme-dark-sub);
+}
+
 .nav > ul > li {
     margin-bottom: 20px;
     display: flex;
@@ -32,4 +36,8 @@
     color: var(--white);
     text-align: center;
     border-radius: 10px;
+}
+
+:global(.dark) .nav > ul > li > span {
+    background-color: var(--theme-dark);
 }

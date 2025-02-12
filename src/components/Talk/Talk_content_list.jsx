@@ -2,7 +2,7 @@ import styles from "@/components/Talk/Talk_content_list.module.css"
 import { useState } from "react"
 
 export function TalkList () {
-    const [ listOpen, setListOpen ] = useState([false,false,false,true,true]);
+    const [ listOpen, setListOpen ] = useState(Array(5).fill(false));
 
     function handleClick (number) {
         let temp = listOpen.slice();

@@ -1,6 +1,7 @@
 .content { 
     grid-area: content;
     position: relative;
+    overflow: hidden;
 }
 
 :global(.dark) .content {
@@ -9,15 +10,11 @@
 
 .content > span {
     position: absolute;
-    font-size: 12px;
-    text-align: center;
-    right: 300px;
-    bottom: 300px;
-    color: var(--white);
+    background-color: var(--white);
+    text-indent: -9999px;
 }
 
-.content > span::before{
-    display: block;
-    content: url(/images/Section/basket_icon.png);
-    z-index: 9999;
-}
+
+
+
+

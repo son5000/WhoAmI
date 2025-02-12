@@ -6,17 +6,17 @@ export function TalkContent () {
 
     return (
         <div className={styles.content}>
-            <div className={["windowButtons" ,styles.windowButtons].join(" ")}>
+            <div className={styles.windowButtons}>
                 <button>최소화</button>
                 <button>최대화</button>
                 <button>닫기</button>
             </div>
             <div className={styles.title}>
-                <p>Who Am I?</p>
+                <p>Hi There :-)</p>
                 <ThemeButton />
             </div>
             <div className={styles.profile}>
-                <img src="/images/Talk/프로필아이콘.png" alt="프로필 아이콘" />
+                <img src="/images/Talk/profile-icon.png" alt="프로필 아이콘" />
                 <p>Hanje</p>
             </div>
             <TalkList />

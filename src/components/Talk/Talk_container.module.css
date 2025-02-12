@@ -3,9 +3,7 @@
     min-width: 350px;
     display: flex;
     justify-content: space-between;
+    background-color: white;
 }
 
-:global(.dark) .container{
-    background-color: var(--theme-light-content);
-}
 

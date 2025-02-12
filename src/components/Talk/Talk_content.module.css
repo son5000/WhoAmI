@@ -2,9 +2,14 @@
     padding-top: 5px;
     padding-left: 20px;
     padding-right: 10px;
-    background-color: white;
     min-width: 280px;
     width: 100%;
+    background-color: var(--white);
+}
+
+:global(.dark) .content {
+    background-color: var(--theme-dark-content);
+    color :var(--theme-dark-font);
 }
 
 .title {
@@ -27,6 +32,22 @@
     font-size: 14px;
     padding-bottom: 15px;
     border-bottom: 1px solid #f0eded ;
+}
+
+.profile > img {
+    width: 55px;
+    height: 55px;
+    border-radius: 21px;
+}
+
+:global(.dark) .profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--theme-dark-sub) ;
 }
 
 .windowButtons {

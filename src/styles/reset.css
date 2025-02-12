@@ -5,6 +5,7 @@
 *{
     margin: 0; 
     padding: 0; 
+    border: 0;
 }
 
 ul[role='list'], ol[role='list']{
@@ -70,8 +71,10 @@ button {
     --white : #fff;
     --light-gray: #666;
     --dark-gray: #8b9f9f;
-    --theme-dark: #6A7BA2;
+    --theme-dark: #212529;
     --theme-light: #6A7BA2;
-    /* --theme-light: #f6f6f6; */
+    --theme-dark-sub:#5a6452;
+    --theme-dark-font:#a2b492;
     --theme-light-content:#fff;
+    --theme-dark-content:#222525;
 }
