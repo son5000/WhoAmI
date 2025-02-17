@@ -1,4 +1,4 @@
-import styles from "@/components/Talk/Talk_content_list.module.css"
+import styles from "@/components/Talk/content_list.module.css"
 import { useState } from "react"
 
 export function TalkList () {

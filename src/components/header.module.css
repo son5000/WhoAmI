@@ -1,4 +1,7 @@
 .header {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
     height: 18px;
     padding-inline: 10px;
     background-color: rgb(148, 144, 144);

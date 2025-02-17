@@ -1,4 +1,4 @@
-import styles from "@/components/Talk/Talk_nav.module.css"
+import styles from "@/components/Talk/nav.module.css"
 import { useTheme } from "@/lib/ThemeContext"
 
 export function TalkNav () {

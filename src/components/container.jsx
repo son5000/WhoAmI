@@ -1,6 +1,6 @@
 import styles from '@/components/container.module.css'
 import { Content } from './content'
-import { TalkContainer } from './Talk/Talk_container'
+import { TalkContainer } from './Talk/container'
 
 
 export function Container () {

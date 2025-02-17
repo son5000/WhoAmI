@@ -1,6 +1,6 @@
-import  styles  from "@/components/Talk/Talk_container.module.css"
-import { TalkNav } from "./Talk_nav"
-import { TalkContent } from "./Talk_content"
+import  styles  from "@/components/Talk/container.module.css"
+import { TalkNav } from "./nav"
+import { TalkContent } from "./content"
 
 
 export function TalkContainer () {

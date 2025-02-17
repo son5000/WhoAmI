@@ -1,6 +1,6 @@
-import styles from "@/components/Talk/Talk_content.module.css"
-import { ThemeButton } from "./Talk_Theme_button"
-import { TalkList } from "./Talk_content_list"
+import styles from "@/components/Talk/content.module.css"
+import { ThemeButton } from "./Theme_button"
+import { TalkList } from "./content_list"
 
 export function TalkContent () {
 

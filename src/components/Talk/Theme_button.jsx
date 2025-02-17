@@ -1,4 +1,4 @@
-import styles from "@/components/Talk/Talk_Theme_button.module.css"
+import styles from "@/components/Talk/Theme_button.module.css"
 import { useTheme } from "@/lib/ThemeContext";
 import { useState } from "react"
 

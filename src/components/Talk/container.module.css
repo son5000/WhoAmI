@@ -1,9 +1,10 @@
 .container {
-    grid-area: author;
+    width: 20%;
     min-width: 350px;
     display: flex;
     justify-content: space-between;
     background-color: white;
+    z-index: 999;
 }
 
 

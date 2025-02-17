@@ -1,16 +1,24 @@
+.container {
+    position: absolute;
+    bottom: -100px;
+    right: -170px;
+}
+
+
 .container > span {
     position: absolute;
     right: 300px;
     bottom: 300px;
     font-size: 12px;
-    color: var(--white);
+    color: transparent;
     z-index: 9999;
+    /* text-indent: -9999px; */
 }
 
 .container > span::before {
+    cursor: pointer;
     content: url(/images/Section/basket_icon.png);
     position: absolute;
-    bottom: 100%;
     left: -20%;
 }
 
