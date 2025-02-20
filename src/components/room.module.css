@@ -27,8 +27,7 @@
   width: 354px;
   height: 440px;
   transform: rotateY(160deg) translateZ(126px) translateX(-42px) ;
-  background-color: rgb(236, 232, 225);
-  background-image: url(/images/Section/왼쪽벽.png);
+  background-image: url(/images/Section/오른쪽벽.png);
 }
 
 .right { 
@@ -59,6 +58,18 @@
   gap: 3px;
 }
 
+.character.active {
+  left: 240px;
+  bottom:200px;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
 .character > span {
   background-color: white;
   text-indent: -9999px;
@@ -72,7 +83,7 @@
   position: absolute;
   text-indent: -9999px;
   border: 1px solid black;
-  z-index: 9999;
+  z-index: 9;
   bottom: 120px;
   left: 175px;
   border-radius: 10px;
@@ -81,6 +92,14 @@
   animation: bounce 2s infinite;
   background: url(/images/Section/icon_light.png) no-repeat center / cover;
 }
+
+.icon.active{
+  background-image: url(/images/Section/icon_dark.png);
+  width: 67px;
+  height: 67px;
+  border: 0;
+}
+
 
 /* 바운스 애니메이션 정의 */
 @keyframes bounce {
@@ -96,13 +115,40 @@
 }
 
 .head {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   border-radius: 100%;
+  position: relative;
+}
+
+/* 모자 입히기 */
+.character.active::before{
+  content: '';
+  z-index: 9999;
+  position: absolute;
+  width: 22px;
+  height: 6px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: url(/images/Section/모자.png);
+}
+
+.character.active::after{
+  content: '';
+  z-index: 9999;
+  position: absolute;
+  width: 20px;
+  height: 25px;
+  left: 50%;
+  top: 32px;
+  transform: translate(-50%, -50%);
+  background: url(/images/Section/옷.png);
+  border-radius: 8px;
 }
   
 .body {
-  top: 22px;
+  top: 20px;
   width: 20px;
   height: 25px;
   border-radius: 8px;
@@ -150,6 +196,7 @@
   position: absolute;
   bottom: 290px;
   right: 175px;
+  cursor: pointer;
 }
 
 .chair {
@@ -160,13 +207,6 @@
 }
 
 .bad {
-  cursor: pointer;
-  position: absolute;
-  bottom: 235px;
-  right: 150px;
-}
-
-.badActive {
   cursor: pointer;
   position: absolute;
   bottom: 235px;
@@ -189,16 +229,12 @@
 
 .window {
   position: absolute;
-  bottom: 370px;
   right: 350px;
+  bottom: 366px;
   cursor: pointer;
+  transform: rotate(-20deg);
 }
-.windowActive {
-  cursor: pointer;
-  position: absolute;
-  bottom: 350px;
-  right: 350px;
-}
+
 
 
 

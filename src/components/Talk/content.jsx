@@ -1,8 +1,16 @@
 import styles from "@/components/Talk/content.module.css"
 import { ThemeButton } from "./Theme_button"
 import { TalkList } from "./content_list"
+import { ProfilePopup } from "./profilePopup"
+import { useState } from "react"
 
 export function TalkContent () {
+    
+    const [ profileOpen, setProfileOpen ] = useState(false);
+
+    function handleProfileOpen () {
+        return setProfileOpen(!profileOpen);
+    }
 
     return (
         <div className={styles.content}>
@@ -16,8 +24,16 @@ export function TalkContent () {
                 <ThemeButton />
             </div>
             <div className={styles.profile}>
-                <img src="/images/Talk/profile-icon.png" alt="프로필 아이콘" />
+                <img 
+                    onClick={() => handleProfileOpen()} 
+                    src="/images/Talk/profile-icon.png" 
+                    alt="프로필 아이콘" />
                 <p>Hanje</p>
+                {profileOpen &&
+                    <ProfilePopup 
+                    profileOpen={profileOpen} 
+                    handleProfileOpen={handleProfileOpen} />
+                }
             </div>
             <TalkList />
         </div>

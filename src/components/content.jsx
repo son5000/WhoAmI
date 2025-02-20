@@ -7,7 +7,6 @@ export function Content () {
 
     return (
       <div className={styles.content}>
-          {/* <Basket /> */}
           <Room />
       </div>
     )
