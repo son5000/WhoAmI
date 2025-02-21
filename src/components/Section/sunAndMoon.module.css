@@ -1,0 +1,46 @@
+.sunAndMoon {
+    position: absolute; 
+    transition: transform 2s ease-in-out; 
+    cursor: pointer;
+    
+  }
+  
+  .move {
+    animation: rotate 5s linear infinite, move 2s forwards; 
+  }
+  
+  .reverse {
+    animation: rotate 5s linear infinite , reverseMove 2s forwards; 
+  }
+
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      top: 420px;
+      left: 570px;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+    }
+  }
+  
+  @keyframes reverseMove {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: 420px;
+      left: 570px;
+    }
+  }
+  

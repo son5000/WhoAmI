@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal"
-import styles from "@/components/basket.module.css"
+import styles from "@/components/Section/basket.module.css"
 
 export function Basket () {
 

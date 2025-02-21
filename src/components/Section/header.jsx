@@ -1,4 +1,4 @@
-import styles from "@/components/header.module.css"
+import styles from "@/components/Section/header.module.css"
 import {format} from "date-fns"
 import { useEffect, useState } from "react";
 

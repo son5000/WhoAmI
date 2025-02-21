@@ -16,6 +16,7 @@
     cursor: pointer;
 }
 
+
 :global(.dark) .list > li {
     border-bottom: 1px solid var(--theme-dark-sub);
 }
@@ -43,6 +44,14 @@
     content: url(/images/Talk/위로화살표-검.png);
 }
 
+.list > li > img {
+    display: block;
+}
+
+.list > li:nth-of-type(n+4) > ul {
+    cursor: default;
+}
+
 .list > li > ul > li {
     color: black;
     font-weight: 600;
@@ -57,7 +66,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 .list > li:nth-of-type(n+3) > ul > li::before {

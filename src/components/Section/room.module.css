@@ -80,6 +80,9 @@
 }
 
 .icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
   position: absolute;
   text-indent: -9999px;
   border: 1px solid black;
@@ -87,8 +90,6 @@
   bottom: 120px;
   left: 175px;
   border-radius: 10px;
-  width: 60px;
-  height: 60px;
   animation: bounce 2s infinite;
   background: url(/images/Section/icon_light.png) no-repeat center / cover;
 }
@@ -234,6 +235,7 @@
   cursor: pointer;
   transform: rotate(-20deg);
 }
+
 
 
 

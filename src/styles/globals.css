@@ -1,5 +1,7 @@
 @import 'reset.css';
 
 
-body{background-color: var(--theme-light)}
+body.light{background-color: var(--theme-light)}
+
+body.dark{background-color: var(--theme-dark)}
 

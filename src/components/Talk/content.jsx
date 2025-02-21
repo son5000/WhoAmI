@@ -3,6 +3,7 @@ import { ThemeButton } from "./Theme_button"
 import { TalkList } from "./content_list"
 import { ProfilePopup } from "./profilePopup"
 import { useState } from "react"
+import { useTalkState } from "@/lib/TalkStateContext"
 
 export function TalkContent () {
     
@@ -12,12 +13,14 @@ export function TalkContent () {
         return setProfileOpen(!profileOpen);
     }
 
+    const { talkState, setTalkState } = useTalkState();
+
     return (
         <div className={styles.content}>
             <div className={styles.windowButtons}>
-                <button>최소화</button>
-                <button>최대화</button>
-                <button>닫기</button>
+                <button 
+                       onClick={() => setTalkState(!talkState)}>닫기
+                </button>
             </div>
             <div className={styles.title}>
                 <p>Hi There :-)</p>

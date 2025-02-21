@@ -5,26 +5,21 @@ import { useState } from "react"
 export function ThemeButton () {
 
     const { theme , setTheme } = useTheme();
-
-    function changeTheme () {
-        return active ? setTheme('light') : setTheme('dark');
+    
+    const handleChangeTheme = () => {
+        if(theme === 'light'){
+             setTheme('dark');
+        }else{
+             setTheme('light')
+        }
     }
-
-    const [ active, setActive ] = useState(false);
-
-    function handleClick  () {
-        setActive(!active);
-        changeTheme();
-    }
-
-    console.log(active,theme);
-
     return (
             <div className={styles.themeButton}>
                 <button
-                    className={active ? styles.active : ""}  
-                    onClick={() => handleClick()}>
-                    Thema
+                    onClick={() => handleChangeTheme()}
+                    className={theme === "dark" ? styles.active : "" }  
+                    >
+                    Theme
                 </button>
             </div>
     )

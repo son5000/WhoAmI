@@ -70,21 +70,10 @@
     background-color: transparent;
 }
 
+
 .windowButtons > button:nth-of-type(1){
-    background-image: url(/images/Talk/최소화-회.png);
-}
-.windowButtons > button:nth-of-type(2){
-    background-image: url(/images/Talk/최대화-회.png);
-}
-.windowButtons > button:nth-of-type(3){
     background-image: url(/images/Talk/닫기-회.png);
 }
 .windowButtons > button:nth-of-type(1):hover{
-    background-image: url(/images/Talk/최소화-검.png);
-}
-.windowButtons > button:nth-of-type(2):hover{
-    background-image: url(/images/Talk/최대화-검.png);
-}
-.windowButtons > button:nth-of-type(3):hover{
     background-image: url(/images/Talk/닫기-검.png);
 }

@@ -76,7 +76,7 @@
 }
 
 .container > div:nth-of-type(2) > button::before {
-    content: url(/images/Talk/sss.png);
+    content: url(/images/Talk/introduce.png);
     display: block;
     margin-bottom: 15px;
 }

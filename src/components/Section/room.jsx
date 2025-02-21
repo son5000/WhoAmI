@@ -1,15 +1,44 @@
-import styles from "@/components/room.module.css"
+import styles from "@/components/Section/room.module.css"
 import { Basket } from "./basket"
 import { useState } from "react"
 import { useTheme } from "@/lib/ThemeContext";
+import { useTalkState } from "@/lib/TalkStateContext";
+import { SunAndMoon } from "./sunAndMoon";
 
 export function Room () {
   const [window, setWindow] = useState(false);
   const [bad, setBad] = useState(false);
   const [hanger, setHanger] = useState(false);
   const { theme } = useTheme();
+  const { talkState, setTalkState } = useTalkState();
 
-  function clickBad () {
+  const windowSrc = () => {
+    const baseSrc = 'images/Section/창문';
+    const imageSuffix = window
+      ? theme === 'light'
+        ? '2.png'
+        : '4.png'
+      : theme === 'light'
+      ? '1.png'
+      : '3.png';
+
+    return baseSrc + imageSuffix;
+  }
+
+  function handleClickTalkIcon () {
+    return setTalkState(!talkState);
+  }
+
+  const iconAni  = () => {
+    if( !talkState ){
+      return {}
+    }
+    return {
+      animation : 'bounce 2s infinite',
+    }
+  }
+
+  function handleClickBad () {
     if(window || hanger){
       setWindow(false);
       setHanger(false);
@@ -17,7 +46,7 @@ export function Room () {
     return setBad(!bad)
   }
 
-  function clickWindow () {
+  function handleClickWindow () {
     if(bad || hanger){
       setBad(false);
       setHanger(false);
@@ -25,7 +54,7 @@ export function Room () {
     setWindow(!window);
   }
 
-  function clickHanger () {
+  function handleClickHanger () {
     if(bad || window){
       setBad(false);
       setWindow(false);
@@ -33,10 +62,9 @@ export function Room () {
     setHanger(!hanger);
   }
 
-  console.log(theme);
-
     return (
       <div className={styles.container}>
+        <SunAndMoon />
           <div className={styles.cube}>
             <div className={styles.left}></div>
             <div className={styles.right}></div>
@@ -52,17 +80,19 @@ export function Room () {
               <span className={styles.rightLeg}>오른쪽다리</span>
             </div> )
           }
-          <span 
+          <span
+            style={iconAni()}
+            onClick={() => handleClickTalkIcon()}
             className={theme == 'light' ? styles.icon : [styles.icon,styles.active].join(' ')}
             >TalkIcon</span>
           <img className={styles.chair} src="images/Section/의자.png" art="의자 이미지" />
           <img 
-            onClick={() => clickHanger()}
+            onClick={() => handleClickHanger()}
             className={styles.hanger} 
             src={ hanger ? "/images/Section/hanger2.png" : "/images/Section/hanger.png" }
             alt="옷걸이 이미지" />
           <img 
-            onClick={() => clickBad()}
+            onClick={() => handleClickBad()}
             className={styles.bad} 
             src={bad ? "/images/Section/침대2.png" : "/images/Section/침대.png"} 
             alt="침대 이미지" />
@@ -71,11 +101,12 @@ export function Room () {
           <img className={styles.computer} src="/images/Section/컴퓨터.png" alt="컴퓨터 이미지" />
           {}
           <img 
-            onClick={ () => clickWindow()}
+            onClick={ () => handleClickWindow()}
             className={styles.window} 
-            src={window ? "/images/Section/창문2.png" : "/images/Section/창문1.png"}
+            src={ windowSrc()}
             alt="창문 이미지" />
           <Basket />
       </div>
     )
 }
+
