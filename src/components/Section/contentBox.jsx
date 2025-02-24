@@ -1,8 +1,9 @@
 import styles from "@/components/Section/contentBox.module.css"
 import { useMainPopupState } from "@/lib/mainPopupContext"
-export function ContentLayOut ({Children}) {
 
-    const {mainPopupState, setMainPopupState} = useMainPopupState();
+export function ContentLayOut ({children}) {
+
+    const { setMainPopupState } = useMainPopupState();
 
     function handleClose () {
         setMainPopupState(0);
@@ -15,7 +16,7 @@ export function ContentLayOut ({Children}) {
                 <div className={styles.header}>header
                     <button onClick={() => handleClose()}>닫기</button>
                 </div>
-                {Children}
+                {children}
             </div>
         </div>
     )

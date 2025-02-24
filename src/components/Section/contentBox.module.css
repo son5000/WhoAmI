@@ -17,7 +17,12 @@
     text-indent: -9999px;
     background-color: var(--white);
     border-radius: 8px;
-    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.overlay > div > div:nth-of-type(2){
+    padding-inline: 50px;
+    padding-block: 20px;
 }
 
 :global(.dark) .overlay > div {
@@ -30,6 +35,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: sticky;
+    z-index: 9999;
+    top: 0;
 }
 
 :global(.dark) .header {

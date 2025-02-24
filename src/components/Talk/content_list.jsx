@@ -21,7 +21,7 @@ export function TalkList () {
         return setListOpen([...temp]), setMainPopupState(number + 1);
     };
 
-    function handdleSkills  (number)  {
+    function handleSkills  (number)  {
         let temp = [...skillsOpen];
         temp[number] = !temp[number];
         return setSkillsOpen([...temp]);
@@ -40,11 +40,15 @@ export function TalkList () {
                     </li>
                 <li onClick={(e) => handleClick(1)}
                     className={listOpen[1] ? styles.active : ""}>
-                    project</li>
+                    project
+                        <img src="images/Talk/project.png" alt="" />
+                    </li>
                 <li onClick={(e) => handleClick(2)}
                     className={listOpen[2] ? styles.active : ""}>
-                    contact</li>
-                <li onClick={() => handdleSkills(0)}
+                    contact
+                        <img src="images/Talk/contact.png" alt="" />
+                    </li>
+                <li onClick={() => handleSkills(0)}
                     className={skillsOpen[0] ? styles.active : ""}>
                     Learned Skills
                     <ul onClick={handleChildClick}>
@@ -56,7 +60,7 @@ export function TalkList () {
                         <li>Express</li>
                     </ul>
                 </li>
-                <li onClick={() => handdleSkills(1)}
+                <li onClick={() => handleSkills(1)}
                     className={skillsOpen[1] ? styles.active : ""}>
                     Skills Being Learned 
                     <ul onClick={handleChildClick}>

@@ -1,0 +1,73 @@
+.container {
+    text-indent: 0px;
+}
+
+.container >  p {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.container > ul > li {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.container > ul > li > ul {
+    margin-block: 15px;
+    font-size: 16px;
+    margin-inline: 10px;
+}
+
+.container > ul > li > ul > li {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.container > ul > li > ul > li > b::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    border-radius: 100%;
+
+}
+
+:global(.dark) .container > ul > li > ul > li > b::before {
+    background-color: var(--white);
+}
+
+.container > ul > li > ul > li > p {
+    text-indent: 20px;
+    font-size: 12px;
+    position: relative;
+}
+
+.container > ul > li > ul > li > p::before{
+    content: "";
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border: 1px solid black;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 100%;
+}
+
+:global(.dark) .container > ul > li > ul > li > p::before{
+    border: 1px solid var(--white);
+}
+
+
+
+
