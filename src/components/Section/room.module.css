@@ -56,7 +56,9 @@
   flex-direction: column;
   align-items: center;
   gap: 3px;
+  cursor: pointer;
 }
+
 
 .character.active {
   left: 240px;
@@ -73,6 +75,17 @@
 .character > span {
   background-color: white;
   text-indent: -9999px;
+}
+
+
+.charLeft {
+  left: 230px;
+  transform: rotateZ(-30deg);
+  z-index: 9;
+}
+.charRight {
+  left: 270px;
+  transform: rotateZ(30deg);
 }
 
 .character > span:not(.head){
@@ -153,6 +166,40 @@
   width: 20px;
   height: 25px;
   border-radius: 8px;
+  position: relative;
+}
+
+.charCenter > .body::after{
+  position: absolute;
+  content: "❤";
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  text-indent: 0;
+}
+
+.charLeft > .body::after{
+  position: absolute;
+  content: "I";
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  text-indent: 0;
+}
+
+.charRight > .body::after{
+  position: absolute;
+  content: "U";
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  text-indent: 0;
 }
 
 .leftHand {
@@ -169,12 +216,52 @@
   transform-origin: bottom;
 }
 
+.charCenter > .leftHand {
+  animation: none;
+  transform-origin: top;
+  transform: rotate(30deg);
+  top: 20px;
+  height: 15px;
+}
+
+.charLeft .leftHand {
+  animation: none;
+  transform: rotate(-110deg);
+}
+
+
+.charRight .leftHand {
+  animation: none;
+  transform: rotate(-160deg);
+  height: 15px;
+  top: 10px;
+}
+
+
 .rightHand {
   top: 22px;
   right: 57px;
   width: 5px;
   height: 20px;
   border-radius: 8px;
+}
+
+.charCenter > .rightHand {
+  height: 15px;
+  transform-origin: top;
+  transform: rotate(-30deg);
+  right: 60px;
+}
+
+.charLeft > .rightHand {
+  transform: rotate(-20deg);
+  height: 15px;
+}
+
+.charRight > .rightHand {
+  transform-origin: top;
+  right: 60px;
+  transform: rotate(-70deg);
 }
 
 .rightLeg {

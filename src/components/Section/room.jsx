@@ -9,6 +9,7 @@ export function Room () {
   const [window, setWindow] = useState(false);
   const [bad, setBad] = useState(false);
   const [hanger, setHanger] = useState(false);
+  const [character, setCharacter] = useState(false);
   const { theme } = useTheme();
   const { talkState, setTalkState } = useTalkState();
 
@@ -38,26 +39,38 @@ export function Room () {
     }
   }
 
-  function handleClickBad () {
-    if(window || hanger){
+  function handleCharacter () {
+    if(window || hanger || bad){
       setWindow(false);
       setHanger(false);
+      setBad(false)
+    }
+    return setCharacter(!character)
+  }
+
+  function handleClickBad () {
+    if(window || hanger || character){
+      setWindow(false);
+      setHanger(false);
+      setCharacter(false);
     }
     return setBad(!bad)
   }
 
   function handleClickWindow () {
-    if(bad || hanger){
+    if(bad || hanger || character){
       setBad(false);
       setHanger(false);
+      setCharacter(false);
     }
     setWindow(!window);
   }
 
   function handleClickHanger () {
-    if(bad || window){
+    if(bad || window || character){
       setBad(false);
       setWindow(false);
+      setCharacter(false);
     }
     setHanger(!hanger);
   }
@@ -71,7 +84,9 @@ export function Room () {
             <div className={styles.bottom}></div>
           </div>{
             !bad && !window && (
-            <div className={ hanger ? [styles.character, styles.active].join(' ') : styles.character}>
+            <div onClick={() => handleCharacter()}
+                 className={ hanger ? [styles.character, styles.active].join(' ') : 
+                                ( character ? [styles.character, styles.charCenter].join(' ') : styles.character)}>
               <span className={styles.head}>머리</span>
               <span className={styles.leftHand}>왼쪽팔</span>
               <span className={styles.body}>몸통</span>
@@ -79,6 +94,29 @@ export function Room () {
               <span className={styles.leftLeg}>왼쪽다리</span>
               <span className={styles.rightLeg}>오른쪽다리</span>
             </div> )
+          }
+          { !bad && !window && !hanger && character && (
+            <>
+            <div onClick={() => handleCharacter()}
+                 className={ [styles.character, styles.charLeft].join(' ')}>
+              <span className={styles.head}>머리</span>
+              <span className={styles.leftHand}>왼쪽팔</span>
+              <span className={styles.body}>몸통</span>
+              <span className={styles.rightHand}>오른쪽팔</span>
+              <span className={styles.leftLeg}>왼쪽다리</span>
+              <span className={styles.rightLeg}>오른쪽다리</span>
+            </div>
+            <div onClick={() => handleCharacter()}
+                 className={[styles.character, styles.charRight].join(' ')}>
+              <span className={styles.head}>머리</span>
+              <span className={styles.leftHand}>왼쪽팔</span>
+              <span className={styles.body}>몸통</span>
+              <span className={styles.rightHand}>오른쪽팔</span>
+              <span className={styles.leftLeg}>왼쪽다리</span>
+              <span className={styles.rightLeg}>오른쪽다리</span>
+            </div>
+            </>
+            )
           }
           <span
             style={iconAni()}
