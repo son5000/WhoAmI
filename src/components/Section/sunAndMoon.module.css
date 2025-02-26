@@ -5,6 +5,10 @@
     
   }
   
+  .firstMove {
+    animation: rotate 5s linear infinite , firstMove 2s forwards; 
+  }
+  
   .move {
     animation: rotate 5s linear infinite, move 2s forwards; 
   }
@@ -13,12 +17,24 @@
     animation: rotate 5s linear infinite , reverseMove 2s forwards; 
   }
 
+
   @keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
+    }
+  }
+
+  @keyframes firstMove {
+    0% {
+      top: 210px;
+      left: 285px;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
     }
   }
   

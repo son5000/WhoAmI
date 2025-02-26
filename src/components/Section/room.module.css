@@ -125,7 +125,7 @@
 /* 모자 입히기 */
 .character.active::before{
   content: '';
-  z-index: 9999;
+  z-index: 9;
   position: absolute;
   width: 22px;
   height: 6px;
@@ -137,7 +137,7 @@
 
 .character.active::after{
   content: '';
-  z-index: 9999;
+  z-index: 9;
   position: absolute;
   width: 20px;
   height: 25px;
@@ -201,7 +201,6 @@
 }
 
 .chair {
-  z-index: 9999;
   position: absolute;
   bottom: 190px;
   right: 315px;

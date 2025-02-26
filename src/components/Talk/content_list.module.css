@@ -58,8 +58,20 @@
     font-size: 12px;
 }
 
+
 :global(.dark) .list > li > ul > li {
     color: var(--theme-dark-font);
+}
+
+.list > li:nth-of-type(2) > ul {
+    padding-block: 10px;
+    
+}
+
+.list > li:nth-of-type(2) > ul > li > div {
+    align-items: center;
+    display: flex;
+    gap: 10px;
 }
 
 .list > li:nth-of-type(n+3) > ul > li {

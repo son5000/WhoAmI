@@ -1,30 +1,47 @@
 import styles from "@/components/Talk/content_list.module.css"
-import { useEffect, useState } from "react"
-import { useMainPopupState } from "@/lib/mainPopupContext";
+import { useState } from "react"
+import { MainPopup } from "./mainPopup";
 export function TalkList () {
 
-    const { setMainPopupState } = useMainPopupState();
     const [ listOpen, setListOpen ] = useState(Array(3).fill(false));
     const [ skillsOpen, setSkillsOpen] = useState(Array(2).fill(false));
+    const [ popupOpen, setPopupOpen ] = useState(false);
+    const [ currentPopup, setCurrentPopup ] = useState(0);
 
-    function handleClick (number) {
+    function handleClickList (number) {
     
         let i = listOpen.indexOf(true);
 
         if(i == number){
-            return setListOpen(Array(3).fill(false)), setMainPopupState(0);
+            return setListOpen(Array(3).fill(false));
         }
-        let temp = Array(3).fill(false);
 
+        let temp = Array(3).fill(false);
         temp[number] = !temp[number]
 
-        return setListOpen([...temp]), setMainPopupState(number + 1);
+        return setListOpen([...temp]);
     };
-
+    
     function handleSkills  (number)  {
         let temp = [...skillsOpen];
         temp[number] = !temp[number];
         return setSkillsOpen([...temp]);
+    }
+
+    
+    const handleClose = () => {
+        setPopupOpen(false);
+        setCurrentPopup(0);
+    }
+
+    const  handleIconClick = (index) => {
+        if(currentPopup == index){
+            setPopupOpen(false);
+            setCurrentPopup(0);
+            return;
+        }
+        setPopupOpen(true);
+        setCurrentPopup(index);
     }
 
     const handleChildClick = (e) => {
@@ -32,22 +49,40 @@ export function TalkList () {
     };
         
     return (
-        <ul className={styles.list}>
-                <li onClick={() => handleClick(0)}
+        <>
+            <ul className={styles.list}>
+                <li onClick={() => handleClickList(0)}
                     className={listOpen[0] ? styles.active : ""}>
                     Education
-                        <img src="images/Talk/education.png" alt="" />
-                    </li>
-                <li onClick={(e) => handleClick(1)}
+                        <img src="images/Talk/education.png" 
+                             alt="" 
+                             onClick={(e) => {
+                                handleChildClick(e);
+                                handleIconClick(1);
+                             }}
+                        />
+                </li>
+                <li onClick={(e) => handleClickList(1)}
                     className={listOpen[1] ? styles.active : ""}>
                     project
-                        <img src="images/Talk/project.png" alt="" />
-                    </li>
-                <li onClick={(e) => handleClick(2)}
+                    <ul>
+                        <li>
+                            <div onClick={(e) => {
+                                    handleChildClick(e);
+                                    handleIconClick(2);
+                                 }}    
+                            >
+                                <img src="images/Talk/인천.png" alt="" />
+                                <p>Icutd</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li onClick={(e) => handleClickList(2)}
                     className={listOpen[2] ? styles.active : ""}>
                     contact
                         <img src="images/Talk/contact.png" alt="" />
-                    </li>
+                </li>
                 <li onClick={() => handleSkills(0)}
                     className={skillsOpen[0] ? styles.active : ""}>
                     Learned Skills
@@ -72,5 +107,8 @@ export function TalkList () {
                     </ul>
                 </li>
             </ul>
+            
+            { popupOpen && <MainPopup handleClose={handleClose} index={currentPopup} /> } 
+        </>
     )
 }

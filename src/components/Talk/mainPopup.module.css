@@ -1,18 +1,11 @@
-.overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.container {
+    position: fixed; 
     z-index: 9999;
-    left: 0px;
-    top: 0px;
-    text-indent: -9999px;
-}
-
-.overlay > div {
-    width: 65%;
+    top: 50%; 
+    left: 59%; 
+    transform: translate(-50%, -50%); 
+    width: 60%;
+    min-width: 700px;
     height: 700px;
     text-indent: -9999px;
     background-color: var(--white);
@@ -20,13 +13,14 @@
     overflow-y: scroll;
 }
 
-.overlay > div > div:nth-of-type(2){
+.container > div:nth-of-type(2){
     padding-inline: 50px;
     padding-block: 20px;
 }
 
-:global(.dark) .overlay > div {
+:global(.dark) .container {
     background-color: var(--theme-dark-content);
+    color: white;
 }
 
 .header {

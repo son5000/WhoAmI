@@ -1,10 +1,8 @@
-import styles from "@/components/Section/education.module.css"
-import { ContentLayOut } from "./contentBox"
+import styles from "@/components/Talk/education.module.css"
 
 export default function Education () {
 
     return (
-        <ContentLayOut>
             <div className={styles.container}>
                 <p>✅ Education</p>
                 <ul>
@@ -76,6 +74,5 @@ export default function Education () {
                     </li>
                 </ul>
                 </div>
-        </ContentLayOut>
     )
 }
