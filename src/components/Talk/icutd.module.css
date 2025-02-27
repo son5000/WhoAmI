@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+}
+
+.textBox{
+    width: 70%;
+    font-size: 14px;
+}
+
+.textBox > p {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.textBox > div:nth-of-type(1){
+    font-size: 18px;
+    display: flex;
+    gap: 30px;
+    margin-block: 10px;
+}
+
+.textBox > ul > li {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.textBox > ul > li > ul > li {
+    margin-block: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-indent: 10px;
+}
+
+.textBox > ul > li > ul > li > p {
+    text-indent: 30px;
+    position: relative;
+}
+
+.textBox > ul > li > ul > li > p > b::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    border-radius: 100%;
+}
+
+/* 
+
+.container > div:nth-of-type(1) > ul > li {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.container > div:nth-of-type(1) > ul > li > ul {
+    margin-block: 15px;
+    font-size: 16px;
+    margin-inline: 10px;
+}
+
+.container > div:nth-of-type(1) > ul > li > ul > li > p {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    font-weight: 400;
+    line-height: 25px;
+    text-indent: 20px;
+    font-size: 12px;
+}
+
+.container > div:nth-of-type(1) > ul > li > ul > li > p > b::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    border-radius: 100%;
+}
+
+:global(.dark) .container > div:nth-of-type(1) > ul > li > ul > li > p > b::before {
+    background-color: var(--white);
+} */
+
+.imgBox {
+    width: 30%;
+    max-height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 10px; 
+}
+
+.imgBox > img:nth-child(1) {
+    grid-column: span 2; 
+}
+
+.imgBox > img:nth-child(2),.imgBox > img:nth-child(3) {
+    grid-column: span 1;
+}
+
+.imgBox > img:nth-child(4) {
+    grid-column: span 2; 
+}
+
+.imgBox > img:nth-child(5),.imgBox > img:nth-child(6) {
+    grid-column: span 1;
+}
+
+
+
