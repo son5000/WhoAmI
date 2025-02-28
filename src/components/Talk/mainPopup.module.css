@@ -1,11 +1,11 @@
+
 .container {
     position: fixed; 
     z-index: 9999;
     top: 50%; 
     left: 59%; 
     transform: translate(-50%, -50%); 
-    width: 60%;
-    min-width: 700px;
+    width: 1100px;
     height: 700px;
     text-indent: -9999px;
     background-color: var(--white);
@@ -18,6 +18,7 @@
     padding-block: 20px;
     text-indent: 0;
 }
+
 
 :global(.dark) .container {
     background-color: var(--theme-dark-content);
@@ -33,6 +34,7 @@
     position: sticky;
     z-index: 9999;
     top: 0;
+    width: 100%;
 }
 
 :global(.dark) .header {
@@ -46,4 +48,28 @@
     text-indent: -9999px;
     background : url(/images/Talk/profile-popip-x-검.png) no-repeat center / contain ;
     cursor: pointer;
+}
+
+
+@media ( width < 1350px ) {
+    .container {
+        position: fixed; 
+        z-index: 9999;
+        width: 100vw;
+        top: 0;
+        left: 50%;
+        top: 50%; 
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        text-indent: -9999px;
+        background-color: var(--white);
+        border-radius: 8px;
+        min-width: none;
+    }
+    .container > div:nth-of-type(2){
+        padding-inline: 20px;
+        padding-block: 20px;
+        text-indent: 0;
+    }
 }

@@ -5,13 +5,15 @@ export function Icutd () {
     return (
             <div className={styles.container}>
                 <div className={styles.textBox}>
-                    <p>✅Icutd</p>
-                    기존 ‘인천 유나이티드’ 공식 홈페이지를 리팩토링한 프로젝트입니다.<br />
-                    React 기반의 프론트엔드와 Express 기반의 백엔드로 구성되었습니다.
+                    <p>✅ Icutd</p>
                     <div>
-                        <Link href={'/'}>배포 링크</Link>
+                        <Link href={'/'}>Project Link</Link>
                         <Link href={'/'}>Github</Link>
                     </div>
+                    <span>
+                        기존 '<b>인천 유나이티드</b>' 공식 홈페이지를 리팩토링한 프로젝트입니다.<br />
+                        <b>React</b> 기반의 프론트엔드와 <b>Express</b> 기반의 백엔드로 구성되었습니다.
+                    </span>
                     <ul>
                         <li>
                             프로젝트 기여도

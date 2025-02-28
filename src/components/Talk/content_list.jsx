@@ -3,31 +3,18 @@ import { useState } from "react"
 import { MainPopup } from "./mainPopup";
 export function TalkList () {
 
-    const [ listOpen, setListOpen ] = useState(Array(3).fill(false));
-    const [ skillsOpen, setSkillsOpen] = useState(Array(2).fill(false));
+    const [ listOpen, setListOpen ] = useState(null);
+    const [ skillsOpen, setSkillsOpen] = useState(null);
     const [ popupOpen, setPopupOpen ] = useState(false);
     const [ currentPopup, setCurrentPopup ] = useState(0);
 
-    function handleClickList (number) {
-    
-        let i = listOpen.indexOf(true);
-
-        if(i == number){
-            return setListOpen(Array(3).fill(false));
-        }
-
-        let temp = Array(3).fill(false);
-        temp[number] = !temp[number]
-
-        return setListOpen([...temp]);
+    function handleClickList (tabIndex) {
+        setListOpen(listOpen === tabIndex ? null : tabIndex)
     };
     
-    function handleSkills  (number)  {
-        let temp = [...skillsOpen];
-        temp[number] = !temp[number];
-        return setSkillsOpen([...temp]);
+    const handleSkills = (tabIndex) => {
+        setSkillsOpen(skillsOpen === tabIndex ? null : tabIndex)
     }
-
     
     const handleClose = () => {
         setPopupOpen(false);
@@ -51,8 +38,8 @@ export function TalkList () {
     return (
         <>
             <ul className={styles.list}>
-                <li onClick={() => handleClickList(0)}
-                    className={listOpen[0] ? styles.active : ""}>
+                <li onClick={() => handleClickList(1)}
+                    className={listOpen === 1 ? styles.active : ""}>
                     Education
                         <img src="images/Talk/education.png" 
                              alt="" 
@@ -62,8 +49,8 @@ export function TalkList () {
                              }}
                         />
                 </li>
-                <li onClick={(e) => handleClickList(1)}
-                    className={listOpen[1] ? styles.active : ""}>
+                <li onClick={(e) => handleClickList(2)}
+                    className={listOpen === 2 ? styles.active : ""}>
                     project
                     <ul>
                         <li>
@@ -78,13 +65,13 @@ export function TalkList () {
                         </li>
                     </ul>
                 </li>
-                <li onClick={(e) => handleClickList(2)}
-                    className={listOpen[2] ? styles.active : ""}>
+                <li onClick={(e) => handleClickList(3)}
+                    className={listOpen === 3 ? styles.active : ""}>
                     contact
                         <img src="images/Talk/contact.png" alt="" />
                 </li>
-                <li onClick={() => handleSkills(0)}
-                    className={skillsOpen[0] ? styles.active : ""}>
+                <li onClick={() => handleSkills(1)}
+                    className={skillsOpen === 1 ? styles.active : ""}>
                     Learned Skills
                     <ul onClick={handleChildClick}>
                         <li>JavaScript</li>
@@ -95,8 +82,8 @@ export function TalkList () {
                         <li>Express</li>
                     </ul>
                 </li>
-                <li onClick={() => handleSkills(1)}
-                    className={skillsOpen[1] ? styles.active : ""}>
+                <li onClick={() => handleSkills(2)}
+                    className={skillsOpen === 2 ? styles.active : ""}>
                     Skills Being Learned 
                     <ul onClick={handleChildClick}>
                         <li>Sql</li>

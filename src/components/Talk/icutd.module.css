@@ -1,5 +1,7 @@
 .container {
     display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .textBox{
@@ -7,17 +9,65 @@
     font-size: 14px;
 }
 
+
 .textBox > p {
     font-size: 34px;
     font-weight: 900;
     margin-bottom: 10px;
 }
 
+.textBox > span {
+    display: inline-block;
+    color: rgb(32, 67, 68);
+    background-color: rgb(233, 250, 246);
+    line-height: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+:global(.dark) .textBox > span {
+    background-color: rgb(53, 52, 52);
+    color: var(--theme-dark-font);
+}
+
 .textBox > div:nth-of-type(1){
-    font-size: 18px;
+    font-size: 14px;
     display: flex;
-    gap: 30px;
-    margin-block: 10px;
+    gap: 15px;
+    margin-block: 20px;
+}
+
+.textBox > div:nth-of-type(1) > a {
+    color: rgb(95, 94, 94);
+    border: 1px  solid #e2e1e1;
+    line-height: 25px;
+    padding-inline: 30px 10px;
+    border-radius: 8px;
+   position: relative;
+   box-shadow: 3px 4px 5px 1px #b9b7b7
+}
+
+:global(.dark) .textBox > div:nth-of-type(1) > a {
+    color: #b9b7b7;
+    box-shadow: 3px 4px 5px 1px #504f4f;
+    border: 1px  solid  #504f4f;
+}
+
+.textBox > div:nth-of-type(1) > a:hover{
+    transform: scale(105%);
+}
+
+.textBox > div:nth-of-type(1) > a::before{
+    content: "";
+    background: url(/images/Talk/link-Icon.png) no-repeat center / cover ;
+    width: 11px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 17px;
+    transform: translate(-50% , -50%);
 }
 
 .textBox > ul > li {
@@ -28,73 +78,69 @@
 
 .textBox > ul > li > ul > li {
     margin-block: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: 400;
+    margin-bottom: 20px;
+    font-weight: 600;
     line-height: 25px;
     text-indent: 10px;
+    font-size: 18px;
 }
 
 .textBox > ul > li > ul > li > p {
-    text-indent: 30px;
+    margin-left: 30px;
+    font-size: 14px;
     position: relative;
+    font-weight: 400;
+    line-height: 30px;
 }
 
 .textBox > ul > li > ul > li > p > b::before {
     content: "";
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background-color: black;
     display: inline-block;
     position: absolute;
-    left: 20px;
-    top: 10px;
+    left: 0px;
+    top: 15px;
     border-radius: 100%;
 }
 
-/* 
-
-.container > div:nth-of-type(1) > ul > li {
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: 600;
-}
-
-.container > div:nth-of-type(1) > ul > li > ul {
-    margin-block: 15px;
-    font-size: 16px;
-    margin-inline: 10px;
-}
-
-.container > div:nth-of-type(1) > ul > li > ul > li > p {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    position: relative;
-    font-weight: 400;
-    line-height: 25px;
-    text-indent: 20px;
-    font-size: 12px;
-}
-
-.container > div:nth-of-type(1) > ul > li > ul > li > p > b::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    background-color: black;
-    display: inline-block;
-    position: absolute;
-    left: 5px;
-    top: 10px;
-    border-radius: 100%;
-}
-
-:global(.dark) .container > div:nth-of-type(1) > ul > li > ul > li > p > b::before {
+:global(.dark) .textBox > ul > li > ul > li > p > b::before {
     background-color: var(--white);
-} */
+}
+
+.textBox > ul > li:nth-last-of-type(1) > ul > li {
+    margin-top: 20px;
+}
+
+.textBox > ul > li:nth-last-of-type(1) > ul > li > p {
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.textBox > ul > li:nth-last-of-type(1) > ul > li > p:nth-of-type(1){
+    margin-top: 10px;
+}
+
+.textBox > ul > li:nth-last-of-type(1) > ul > li > p::before { 
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    border-radius: 100%;
+}
+
+:global(.dark) .textBox > ul > li:nth-last-of-type(1) > ul > li > p::before {
+    background-color: var(--white);
+}
 
 .imgBox {
-    width: 30%;
+    /* width: 300px; */
+    min-width: 265px;
     max-height: 700px;
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -118,5 +164,12 @@
     grid-column: span 1;
 }
 
-
-
+@media ( width < 950px  ){
+    .container {
+        flex-wrap: wrap;
+    }
+    .textBox{
+        width: 100%;
+        font-size: 14px;
+    }
+}
