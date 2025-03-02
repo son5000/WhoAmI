@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 950px;
 }
 
 :global(.dark) .content {
@@ -19,7 +20,7 @@
 @media ( width < 600px ) {
 
     .content { 
-        width: 0;
+        display: none;
     }
 }
 

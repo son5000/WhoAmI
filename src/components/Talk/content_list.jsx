@@ -3,13 +3,15 @@ import { useState } from "react"
 import { MainPopup } from "./mainPopup";
 export function TalkList () {
 
-    const [ listOpen, setListOpen ] = useState(null);
+    const [ listOpen, setListOpen ] = useState(Array(3).fill(false));
     const [ skillsOpen, setSkillsOpen] = useState(null);
     const [ popupOpen, setPopupOpen ] = useState(false);
     const [ currentPopup, setCurrentPopup ] = useState(0);
 
     function handleClickList (tabIndex) {
-        setListOpen(listOpen === tabIndex ? null : tabIndex)
+        let temp = [...listOpen];
+        temp[tabIndex] = !temp[tabIndex];
+        return setListOpen(temp);
     };
     
     const handleSkills = (tabIndex) => {
@@ -38,8 +40,8 @@ export function TalkList () {
     return (
         <>
             <ul className={styles.list}>
-                <li onClick={() => handleClickList(1)}
-                    className={listOpen === 1 ? styles.active : ""}>
+                <li onClick={() => handleClickList(0)}
+                    className={listOpen[0] ? styles.active : ""}>
                     Education
                         <img src="images/Talk/education.png" 
                              alt="" 
@@ -49,8 +51,8 @@ export function TalkList () {
                              }}
                         />
                 </li>
-                <li onClick={(e) => handleClickList(2)}
-                    className={listOpen === 2 ? styles.active : ""}>
+                <li onClick={(e) => handleClickList(1)}
+                    className={listOpen[1] ? styles.active : ""}>
                     project
                     <ul>
                         <li>
@@ -65,10 +67,17 @@ export function TalkList () {
                         </li>
                     </ul>
                 </li>
-                <li onClick={(e) => handleClickList(3)}
-                    className={listOpen === 3 ? styles.active : ""}>
+                <li onClick={(e) => handleClickList(2)}
+                    className={listOpen[2] ? styles.active : ""}>
                     contact
-                        <img src="images/Talk/contact.png" alt="" />
+                        <img 
+                            src="images/Talk/contact.png" 
+                            alt="" 
+                            onClick={(e) => {
+                                handleChildClick(e);
+                                handleIconClick(3);
+                             }}
+                        />
                 </li>
                 <li onClick={() => handleSkills(1)}
                     className={skillsOpen === 1 ? styles.active : ""}>

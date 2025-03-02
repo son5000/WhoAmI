@@ -64,16 +64,20 @@
     height: 13px;
     font-size: 0.1px;
     color: transparent;
+    background-image: url(/images/Talk/닫기-회.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: transparent;
 }
 
-
-.windowButtons > button:nth-of-type(1){
-    background-image: url(/images/Talk/닫기-회.png);
-}
-.windowButtons > button:nth-of-type(1):hover{
+.windowButtons > button:hover{
     background-image: url(/images/Talk/닫기-검.png);
+}
+
+@media(width < 600px) {
+    
+    .windowButtons {
+        display: none;
+    }
 }
