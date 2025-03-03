@@ -1,6 +1,6 @@
 import styles from "@/components/Section/room.module.css"
 import { Basket } from "./basket"
-import { use, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import { useTheme } from "@/lib/ThemeContext";
 import { useTalkState } from "@/lib/TalkStateContext";
 import { SunAndMoon } from "./sunAndMoon";
@@ -51,28 +51,31 @@ export function Room () {
   }
 
   function handleClickBad () {
-    if(window || hanger || character){
+    if(window || hanger || character || soccer){
       setWindow(false);
       setHanger(false);
       setCharacter(false);
+      setSoccer(false);
     }
     return setBad(!bad)
   }
 
   function handleClickWindow () {
-    if(bad || hanger || character){
+    if(bad || hanger || character || soccer){
       setBad(false);
       setHanger(false);
       setCharacter(false);
+      setSoccer(false);
     }
     setWindow(!window);
   }
 
   function handleClickHanger () {
-    if(bad || window || character){
+    if(bad || window || character || soccer){
       setBad(false);
       setWindow(false);
       setCharacter(false);
+      setSoccer(false);
     }
     setHanger(!hanger);
   }
@@ -103,12 +106,13 @@ export function Room () {
             <div className={styles.right}></div>
             <div className={styles.bottom}></div>
           </div>
-          {!bad && !window && !soccer && ( <Character 
+          {!bad && !window && !soccer &&  ( <Character 
                                   handleCharacter={handleCharacter} 
                                   hanger={hanger}
                                   character={character}
                                   window={window}
                                   bad={bad}
+                                  soccer={soccer}
                                   />
                                 )
           }

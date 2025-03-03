@@ -1,8 +1,11 @@
 import styles from "@/components/Section/character.module.css"
 
-export function Character ({handleCharacter,hanger,character,bad,window}) {
+export function Character ({handleCharacter,hanger,character,bad,window,soccer}) {
     return (
-        <>
+        <>  
+            {!hanger && <span className={styles.speechBubble}>
+                    <p className={styles.typeWriter}></p>
+            </span>}
             <div onClick={() => handleCharacter()}
                 className={ hanger ? [styles.character, styles.active].join(' ') : 
                     ( character ? [styles.character, styles.charCenter].join(' ') : styles.character)}>

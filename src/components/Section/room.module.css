@@ -141,7 +141,7 @@
 }
 
 .soccerBall.shoot {
-  animation: shoot 2s linear 0.8s , rotate 2s linear 0.8s ; /* 애니메이션 추가 */
+  animation: shoot 2.5s linear 0.8s , rotate 2.5s linear 0.8s ; /* 애니메이션 추가 */
 }
 
   @keyframes shoot {
@@ -151,7 +151,7 @@
     }
     100% {
       bottom: 1000px; 
-      right: 750px;
+      right: -500px;
     }
   }
 
