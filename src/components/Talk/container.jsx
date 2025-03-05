@@ -5,10 +5,18 @@ import { useState } from "react"
 
 export function TalkContainer () {
 
+    const [ currentTab, setCurrentTab ]  = useState('profile');
+
+    const handleChangeTab = (current) => {
+        if(current == currentTab) return;
+
+        return setCurrentTab(current);
+    }
+    
     return (
         <div className={styles.container}>
-            <TalkNav />
-            <TalkContent />            
+            <TalkNav currentTab={currentTab} handleChangeTab={handleChangeTab} />
+            <TalkContent currentTab={currentTab} handleChangeTab={handleChangeTab} />            
         </div>
     )
 }

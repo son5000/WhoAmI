@@ -131,3 +131,15 @@
 .list > li:nth-of-type(5) > ul > li:nth-of-type(5):before {
     background-image : url(/images/Talk/prisma-icon.png); 
 }
+
+.guestBook {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+:global(.dark) .guestBook {
+    color: white;
+}

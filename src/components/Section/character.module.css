@@ -312,10 +312,7 @@
 
 
 :global(.dark) .speechBubble {
-  background-color: black;
-}
-:global(.dark) .speechBubble:after {
-  border-top-color: black;
+  color: black;
 }
 
 @keyframes typing {

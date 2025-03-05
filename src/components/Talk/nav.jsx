@@ -1,7 +1,7 @@
 import styles from "@/components/Talk/nav.module.css"
 import { useTheme } from "@/lib/ThemeContext"
 
-export function TalkNav () {
+export function TalkNav ({currentTab, handleChangeTab}) {
 
     const {theme} = useTheme();
 
@@ -9,10 +9,16 @@ export function TalkNav () {
         <nav className={styles.nav}>
             <ul>
                 <li>
-                    <img src="/images/Talk/me-icon-검.png" alt="profile icon" />
+                    <img onClick={() => handleChangeTab("profile")}
+                         src={currentTab === "profile" ? "/images/Talk/me-icon-검.png" : "/images/Talk/me-icon-회.png"}
+                         alt="profile icon" 
+                    />
                 </li>
                 <li>
-                    <img src="/images/Talk/말풍선-icon-회.png" alt="text block icon" />
+                    <img onClick={() => handleChangeTab("guestBook")}
+                         src={currentTab === "guestBook" ? "/images/Talk/말풍선-icon-검.png" : "/images/Talk/말풍선-icon-회.png"}
+                         alt="text block icon" 
+                    />
                     <span>99</span>
                 </li>
             </ul>

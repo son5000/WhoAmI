@@ -5,40 +5,68 @@ import { ProfilePopup } from "./profilePopup"
 import { useState } from "react"
 import { useTalkState } from "@/lib/TalkStateContext"
 
-export function TalkContent () {
+export function TalkContent ({currentTab, handleChangeTab}) {
     
     const [ profileOpen, setProfileOpen ] = useState(false);
 
     function handleProfileOpen () {
         return setProfileOpen(!profileOpen);
     }
-
     const { talkState, setTalkState } = useTalkState();
-
     return (
-        <div className={styles.content}>
-            <div className={styles.windowButtons}>
-                <button 
-                       onClick={() => setTalkState(!talkState)}>닫기
-                </button>
-            </div>
-            <div className={styles.title}>
+        <>
+          {currentTab === 'profile' ? (
+            <div className={styles.content}>
+              <div className={styles.windowButtons}>
+                <button onClick={() => setTalkState(!talkState)}>닫기</button>
+              </div>
+              <div className={styles.title}>
                 <p>Hi There :-)</p>
                 <ThemeButton />
-            </div>
-            <div className={styles.profile}>
+              </div>
+              <div className={styles.profile}>
                 <img 
-                    onClick={() => handleProfileOpen()} 
-                    src="/images/Talk/profile-icon.png" 
-                    alt="프로필 아이콘" />
+                  onClick={() => handleProfileOpen()} 
+                  src="/images/Talk/profile-icon.png" 
+                  alt="프로필 아이콘" 
+                />
                 <p>Hanje</p>
-                {profileOpen &&
-                    <ProfilePopup 
+                {profileOpen && 
+                  <ProfilePopup 
                     profileOpen={profileOpen} 
-                    handleProfileOpen={handleProfileOpen} />
+                    handleProfileOpen={handleProfileOpen} 
+                  />
                 }
+              </div>
+              <TalkList currentTab={currentTab} />
             </div>
-            <TalkList />
-        </div>
-    )
-}
+          ) : (
+            <div className={styles.content}>
+              <div className={styles.windowButtons}>
+                <button onClick={() => setTalkState(!talkState)}>닫기</button>
+              </div>
+              <div className={styles.title}>
+                <p>GuestBook📚</p>
+                <ThemeButton />
+              </div>
+              <div className={styles.profile}>
+                <img 
+                  onClick={() => handleProfileOpen()} 
+                  src="/images/Talk/profile-icon.png" 
+                  alt="프로필 아이콘" 
+                />
+                <p>Hanje</p>
+                {profileOpen && 
+                  <ProfilePopup 
+                    profileOpen={profileOpen} 
+                    handleProfileOpen={handleProfileOpen} 
+                  />
+                }
+              </div>
+              <TalkList currentTab={currentTab} />
+            </div>
+          )}
+        </>
+      );
+      
+} 
