@@ -1,6 +1,6 @@
 import styles from "@/components/Talk/education.module.css"
 
-export default function Education () {
+export function Education () {
 
     return (
             <div className={styles.container}>

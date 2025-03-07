@@ -11,11 +11,32 @@
     background-color: var(--white);
     border-radius: 8px;
     overflow-y: scroll;
+    min-width: 350px;
+}
+
+.container.guestBook {
+    position: fixed; 
+    z-index: 9999;
+    top: 50%; 
+    left: 59%; 
+    transform: translate(-50%, -50%); 
+    width: 350px;
+    height: 700px;
+    text-indent: -9999px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow-y: hidden;
 }
 
 .container > div:nth-of-type(2){
     padding-inline: 50px;
     padding-block: 20px;
+    text-indent: 0;
+}
+
+.container.guestBook > div:nth-of-type(2){
+    padding-block: 20px;
+    padding-inline: 0px;
     text-indent: 0;
 }
 
@@ -56,7 +77,6 @@
         position: fixed; 
         z-index: 9999;
         width: 100vw;
-        top: 0;
         left: 50%;
         top: 50%; 
         right: 0;
@@ -64,12 +84,26 @@
         height: 100vh;
         text-indent: -9999px;
         background-color: var(--white);
-        border-radius: 8px;
         min-width: none;
     }
     .container > div:nth-of-type(2){
         padding-inline: 20px;
         padding-block: 20px;
         text-indent: 0;
+    }
+}
+
+@media ( width < 600px ) {
+    .container.guestBook {
+        position: fixed; 
+        z-index: 9999;
+        width: 100vw;
+        left: 50%;
+        top: 50%; 
+        width: 100vw;
+        min-width: 350px;
+        height: 100vh;
+        text-indent: -9999px;
+        background-color: var(--white);
     }
 }

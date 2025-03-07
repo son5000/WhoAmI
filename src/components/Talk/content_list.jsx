@@ -1,13 +1,14 @@
 import styles from "@/components/Talk/content_list.module.css"
 import { useState } from "react"
 import { MainPopup } from "./mainPopup";
+import { guestBook } from "./guestBook";
 
 export function TalkList ({currentTab}) {
 
     const [ listOpen, setListOpen ] = useState(Array(4).fill(false));
     const [ skillsOpen, setSkillsOpen] = useState(null);
     const [ popupOpen, setPopupOpen ] = useState(false);
-    const [ currentPopup, setCurrentPopup ] = useState(0);
+    const [ currentPopup, setCurrentPopup ] = useState('');
 
     function handleClickList (tabIndex) {
         let temp = [...listOpen];
@@ -21,24 +22,22 @@ export function TalkList ({currentTab}) {
     
     const handleClose = () => {
         setPopupOpen(false);
-        setCurrentPopup(0);
+        setCurrentPopup('');
     }
 
-    const  handleIconClick = (index) => {
-        if(currentPopup == index){
+    const  handleIconClick = (category) => {
+        if(currentPopup == category){
             setPopupOpen(false);
-            setCurrentPopup(0);
+            setCurrentPopup('');
             return;
         }
         setPopupOpen(true);
-        setCurrentPopup(index);
+        setCurrentPopup(category);
     }
 
     const handleChildClick = (e) => {
       e.stopPropagation();  
     };
-
-    console.log(currentTab);
 
     return (
         <>
@@ -52,7 +51,7 @@ export function TalkList ({currentTab}) {
                                  alt=""
                                  onClick={(e) => {
                                      handleChildClick(e);
-                                     handleIconClick(1);
+                                     handleIconClick('Education');
                                  }}
                             />
                         </li>
@@ -63,7 +62,7 @@ export function TalkList ({currentTab}) {
                                 <li>
                                     <div onClick={(e) => {
                                         handleChildClick(e);
-                                        handleIconClick(2);
+                                        handleIconClick('Icutd');
                                     }}>
                                         <img src="images/Talk/인천.png" alt="" />
                                         <p>Icutd</p>
@@ -79,7 +78,7 @@ export function TalkList ({currentTab}) {
                                 alt=""
                                 onClick={(e) => {
                                     handleChildClick(e);
-                                    handleIconClick(3);
+                                    handleIconClick('Contact');
                                 }}
                             />
                         </li>
@@ -107,7 +106,7 @@ export function TalkList ({currentTab}) {
                             </ul>
                         </li>
                     </ul>
-                    {popupOpen && <MainPopup handleClose={handleClose} index={currentPopup} />}
+                    {popupOpen && <MainPopup handleClose={handleClose} category={currentPopup} />}
                 </>
             ) : (
                 <>
@@ -121,14 +120,14 @@ export function TalkList ({currentTab}) {
                                      alt="말풍선 아이콘"
                                      onClick={(e) => {
                                          handleChildClick(e);
-                                         handleIconClick(0);
+                                         handleIconClick('GuestBook');
                                         }}
                                         />
                                 <span>Click this icon !</span>
                             </div>
                         </li>
                     </ul>
-                    {popupOpen && <MainPopup handleClose={handleClose} index={currentPopup} />}
+                    {popupOpen && <MainPopup handleClose={handleClose} category={currentPopup} />}
                 </>
             )}
         </>

@@ -1,26 +1,28 @@
 import styles from "@/components/Talk/mainPopup.module.css"
-import Education from "./education";
+import { Education } from "./education";
 import { Icutd } from "./icutd";
 import { Contact } from "./contact";
+import { GuestBook } from "./guestBook";
 
-export function MainPopup ({ handleClose, index = 0}) {
-
+export function MainPopup ({ handleClose, category }) {
+    
     return (
-        <div className={styles.container}>
+        <div className={ category === 'GuestBook' ? [styles.container , styles.guestBook].join(' ') : styles.container }>
             <div className={styles.header}>header
                 <button onClick={handleClose}>닫기</button>
             </div>
-            <Content index={index} />
+            <Content category={category} />
         </div>
     )
 }
 
-export function Content ({ index }) {
+export function Content ({ category }) {
 
-    switch(index) {
-        case 1 : return <Education />;
-        case 2 : return <Icutd />;
-        case 3 : return <Contact />;
+    switch(category) {
+        case 'Education' : return <Education />;
+        case 'Icutd' : return <Icutd />;
+        case 'Contact' : return <Contact />;
+        case 'GuestBook' : return <GuestBook className={styles.guestBook}/>
         default :
             return null;
     }
