@@ -1,4 +1,4 @@
-import styles from "@/components/Talk/icutd.module.css"
+import styles from "@/components/Talk/project.module.css"
 import Link from "next/link"
 
 export function Icutd () {

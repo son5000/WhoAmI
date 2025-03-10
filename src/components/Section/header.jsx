@@ -18,7 +18,7 @@ export function Header () {
     const date =formatedDate.split('--')[0];
     const hours = formatedDate.split('--')[1];
     const minutes = formatedDate.split('--')[2];
-    const period = hours >= 12 ? '오후' : '오전';
+    const period = hours >= 12 ? '오전' : '오후';
 
     return (
         <div className={styles.header}>

@@ -58,6 +58,14 @@
     font-size: 12px;
 }
 
+.list > li > ul > li > div {
+    margin-bottom: 10px;
+}
+
+.list > li > ul > li img {
+    width: 35px;
+}
+
 
 :global(.dark) .list > li > ul > li {
     color: var(--theme-dark-font);

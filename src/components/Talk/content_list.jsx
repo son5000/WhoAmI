@@ -68,6 +68,15 @@ export function TalkList ({currentTab}) {
                                         <p>Icutd</p>
                                     </div>
                                 </li>
+                                <li>
+                                    <div onClick={(e) => {
+                                        handleChildClick(e);
+                                        handleIconClick('WhoAmI');
+                                    }}>
+                                        <img src="images/Section/icon_light.png" alt="" />
+                                        <p>WhoAmI</p>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
                         <li onClick={(e) => handleClickList(2)}

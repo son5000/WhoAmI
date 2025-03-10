@@ -3,6 +3,7 @@ import { Education } from "./education";
 import { Icutd } from "./icutd";
 import { Contact } from "./contact";
 import { GuestBook } from "./guestBook";
+import { WhoAmI } from "./whoami";
 
 export function MainPopup ({ handleClose, category }) {
     
@@ -21,6 +22,7 @@ export function Content ({ category }) {
     switch(category) {
         case 'Education' : return <Education />;
         case 'Icutd' : return <Icutd />;
+        case 'WhoAmI' : return <WhoAmI />;
         case 'Contact' : return <Contact />;
         case 'GuestBook' : return <GuestBook className={styles.guestBook}/>
         default :
