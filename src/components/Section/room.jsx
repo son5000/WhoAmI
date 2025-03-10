@@ -5,8 +5,10 @@ import { useTheme } from "@/lib/ThemeContext";
 import { useTalkState } from "@/lib/TalkStateContext";
 import { SunAndMoon } from "./sunAndMoon";
 import { Character, ShootCharacter} from "./character";
+import { WallCharacter } from "./character";
 
 export function Room () {
+  
   const [window, setWindow] = useState(false);
   const [bad, setBad] = useState(false);
   const [hanger, setHanger] = useState(false);
@@ -101,20 +103,22 @@ export function Room () {
     return (
       <div className={styles.container}>
         <SunAndMoon />
+        <WallCharacter />
           <div className={styles.cube}>
             <div className={styles.left}></div>
             <div className={styles.right}></div>
             <div className={styles.bottom}></div>
           </div>
-          {!bad && !window && !soccer &&  ( <Character 
-                                  handleCharacter={handleCharacter} 
-                                  hanger={hanger}
-                                  character={character}
-                                  window={window}
-                                  bad={bad}
-                                  soccer={soccer}
-                                  />
-                                )
+          {!bad && !window && !soccer &&  
+            ( <Character 
+                  handleCharacter={handleCharacter} 
+                  hanger={hanger}
+                  character={character}
+                  window={window}
+                  bad={bad}
+                  soccer={soccer}
+                  />
+                )
           }
           <span
             style={iconAni()}

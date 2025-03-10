@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export function Character ({handleCharacter,hanger,character,bad,window}) {
     return (
-        <>  <WallCharacter />
+        <> 
             {!hanger && <span className={styles.speechBubble}>
                     <p className={styles.typeWriter}></p>
             </span>}

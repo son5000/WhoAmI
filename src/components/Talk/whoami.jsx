@@ -12,7 +12,7 @@ export function WhoAmI () {
                     </div>
                     <span>
                         <b>Who Am I</b>는 Next.js를 기반으로 만들어진 저의 개인 PR 사이트 입니다.<br />
-                        <b>Next.js</b>를 사용하여 백엔드 서버는 따로 구축하지 않았으며, <b>MongoDB</b>를 연결하여 데이터베이스 기능을 구현했습니다.
+                        <b>Next.js</b>를 사용하여 백엔드 서버는 따로 구축하지 않았으며,<br /> <b>MongoDB</b>를 연결하여 데이터베이스 기능을 구현했습니다.
                     </span>
                     <ul>
                         <li>

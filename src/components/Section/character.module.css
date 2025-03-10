@@ -9,7 +9,7 @@
     align-items: center;
     gap: 3px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 2;
   }
 
   
@@ -223,6 +223,7 @@
     align-items: center;
     gap: 3px;
     cursor: pointer;
+    z-index: 3;
   }
   
   .leftHand {
