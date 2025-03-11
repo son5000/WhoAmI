@@ -18,7 +18,7 @@
     position: fixed; 
     z-index: 9999;
     top: 50%; 
-    left: 59%; 
+    left: 630px; 
     transform: translate(-50%, -50%); 
     width: 350px;
     height: 700px;

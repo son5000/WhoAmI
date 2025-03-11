@@ -7,8 +7,8 @@ export function Icutd () {
                 <div className={styles.textBox}>
                     <p>✅ Icutd</p>
                     <div>
-                        <Link href={'/'}>Project Link</Link>
-                        <Link href={'/'}>Github</Link>
+                        <a href="https://icutd.netlify.app" target="_blank">Project Link</a>
+                        <a href="https://github.com/son5000/IncheonUited.git" target="_blank">GitHub</a>
                     </div>
                     <span>
                         기존 '<b>인천 유나이티드</b>' 공식 홈페이지를 리팩토링한 프로젝트입니다.<br />
@@ -122,13 +122,13 @@ export function Icutd () {
                                       디바이스 환경에 따라 달라지는 UI는 Media Query를 적극 반영했습니다. 또한, 경우에 따라 resize 이벤트 핸들러를 등록하여 current width 값에 맞춰 렌더링을 진행했습니다.
                                     </p>
                                     <p>
-                                      CSS 는 Sass/SCSS (네스팅 스타일) 을 사용해서 작성했으며 총 6개의 css 파일로 나누어 관리를 진행했습니다.내용은 다음과 같습니다.
-                                        <span>global.css : 전역으로 사용되는 컴포넌트(header ,  footer …)들을 포함.</span>
-                                        <span>page.css : 전역에 포함되지 않으며 각각의 페이지에서만 사용되는 컴포넌트들을 포함.</span>
-                                        <span>reset.css : 전역으로 사용할 root 변수들과 css 모듈화를 포함하고 있습니다.</span>
-                                        <span>components.css : page단위 안에서 더 작은 단위로 사용되며 중복으로 사용되는 컴포넌트들을 포함.</span>
-                                        <span>import.css : 각각의 css 페이지들을 import 하고 어플리케이션을 직접 관통하는 css 파일.</span>
-                                        <span>media1120.css : 미디어 쿼리로 반응형의 css 값을 가지고 있습니다.</span>
+                                      CSS 는 Sass/SCSS (네스팅 스타일) 을 사용해서 작성했으며 총 6개의 css 파일로 나누어 관리를 진행했습니다. 내용은 다음과 같습니다.
+                                        <span className={styles.blockSpan}>global.css : 전역으로 사용되는 컴포넌트(header ,  footer …)들을 포함.</span>
+                                        <span className={styles.blockSpan}>page.css : 전역에 포함되지 않으며 각각의 페이지에서만 사용되는 컴포넌트들을 포함.</span>
+                                        <span className={styles.blockSpan}>reset.css : 전역으로 사용할 root 변수들과 css 모듈화를 포함하고 있습니다.</span>
+                                        <span className={styles.blockSpan}>components.css : page단위 안에서 더 작은 단위로 사용되며 중복으로 사용되는 컴포넌트들을 포함.</span>
+                                        <span className={styles.blockSpan}>import.css : 각각의 css 페이지들을 import 하고 어플리케이션을 직접 관통하는 css 파일.</span>
+                                        <span className={styles.blockSpan}>media1120.css : 미디어 쿼리로 반응형의 css 값을 가지고 있습니다.</span>
                                     </p>
                                     <p>
                                       애니메이션을 페이지별로 다르게 설정해야 하는 부분이 있었습니다. JSX 장점인 태그내에서의 변수 활용을 사용하여 CSS inline-style 로 각각의 다른 값을 할당해주기도 했습니다.
@@ -184,12 +184,12 @@ export function Icutd () {
                     </ul>
                 </div>
                 <div className={styles.imgBox}>
-                    <img src="/images/Talk/icutd_page1.png" alt="" />
-                    <img src="/images/Talk/icutd_page3.png" alt="" />
-                    <img src="/images/Talk/icutd_page4.png" alt="" />
-                    <img src="/images/Talk/icutd_page2.png" alt="" />
-                    <img src="/images/Talk/icutd_page5.png" alt="" />
-                    <img src="/images/Talk/icutd_page6.png" alt="" />
+                    <img src="/images/Talk/icutd_page1.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/icutd_page3.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/icutd_page4.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/icutd_page2.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/icutd_page5.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/icutd_page6.png" alt="페이지 미리보기 이미지" />
                 </div>
             </div>  
     )

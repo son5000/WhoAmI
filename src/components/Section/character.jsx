@@ -82,7 +82,7 @@ export function WallCharacter () {
 
     return (
     <div className={styles.WallCharacter}>
-        { police && <img src="images/Section/경찰차.png" alt="" />}
+        { police && <img src="images/Section/경찰차.png" alt="경찰차 이미지" />}
         <div onClick={() => handleClick()}
         className={police && styles.hide}
         >

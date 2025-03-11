@@ -438,6 +438,7 @@
   bottom: 10px;
   left: 20px;
   border-radius: 100%;
+  background-image: url(/images/Section/도둑얼굴.png);
 }
 
 .WallCharacter > div > .WallBody {

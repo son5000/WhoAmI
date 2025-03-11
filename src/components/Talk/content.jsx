@@ -5,7 +5,7 @@ import { ProfilePopup } from "./profilePopup"
 import { useState } from "react"
 import { useTalkState } from "@/lib/TalkStateContext"
 
-export function TalkContent ({currentTab, handleChangeTab}) {
+export function TalkContent ({currentTab}) {
     
     const [ profileOpen, setProfileOpen ] = useState(false);
 

@@ -7,8 +7,8 @@ export function WhoAmI () {
                 <div className={styles.textBox}>
                     <p>✅ Who Am I</p>
                     <div>
-                        <Link href={'/'}>Project Link</Link>
-                        <Link href={'/'}>Github</Link>
+                        <a href={'/'} target="_blank">Project Link</a>
+                        <a href={'https://github.com/son5000/WhoAmI.git'} target="_blank">GitHub</a>
                     </div>
                     <span>
                         <b>Who Am I</b>는 Next.js를 기반으로 만들어진 저의 개인 PR 사이트 입니다.<br />
@@ -110,12 +110,12 @@ export function WhoAmI () {
                     </ul>
                 </div>
                 <div className={styles.imgBox}>
-                    <img src="/images/Talk/whoami-1.png" alt="" />
-                    <img src="/images/Talk/whoami-6.png" alt="" />
-                    <img src="/images/Talk/whoami-3.png" alt="" />
-                    <img src="/images/Talk/whoami-4.png" alt="" />
-                    <img src="/images/Talk/whoami-2.png" alt="" />
-                    <img src="/images/Talk/whoami-5.png" alt="" />
+                    <img src="/images/Talk/whoami-1.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/whoami-6.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/whoami-3.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/whoami-4.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/whoami-2.png" alt="페이지 미리보기 이미지" />
+                    <img src="/images/Talk/whoami-5.png" alt="페이지 미리보기 이미지" />
                 </div>
             </div>  
     )
