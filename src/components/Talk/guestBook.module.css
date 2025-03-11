@@ -32,8 +32,8 @@
 
 .textBox > span {
     text-indent: -9999px;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     background-color: var(--theme-light);
     border-radius: 15px;
     min-width: 35px;
@@ -164,8 +164,8 @@
     justify-content: center;
     height: 30px;
     position: absolute;
-    right: 5px;
-    top: 10px;
+    right: 30px;
+    top: -40px;
     width: 50px;
     cursor: pointer;
     font-size: 13px;
@@ -194,7 +194,7 @@
     text-align: center;
     height: 30%;
     width: 100%;
-    background-color: rgb(189, 183, 183);
+    background-color: rgb(247, 201, 127);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,16 +207,26 @@
     right: 5px;
     top: 10px;
     cursor: pointer;
-    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
     font-size: 12px;
     width: 80px;
     border-radius: 8px;
+    background-color: rgb(253, 231, 106);
 }
 
 .authorPopup > form > label {
     margin-bottom: 10px;
     display: block;
-    font-size: 25px;
+    font-size: 18px;
+    color: white;
+}
+
+.authorPopup > form > label > span {
+    font-size: 12px;
+    color: rgb(94, 73, 42);
 }
 
 .authorPopup > form > input {
@@ -228,10 +238,15 @@
 }
 
 .authorPopup > form > button:nth-of-type(2) {
-    line-height: 25px;
     width: 20%;
     border-radius: 8px;
     cursor: pointer;
+    background-color: rgb(176, 248, 167);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
 }
 
 

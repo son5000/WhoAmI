@@ -102,20 +102,37 @@ export function GuestBook () {
 }
 
 
-export function TextBox ({commentData}) {
+export function TextBox ({commentData = []}) {
 
-    if(!commentData){
-        return null;
+  if(!commentData){
+      return null;
+  }
+
+  const generateRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
     }
+    return color;
+  };
+
+
+  const [colors, setColors] = useState(
+    commentData.map(() => generateRandomColor())
+  );
+
 
     return (
         <div>
-          {commentData.map((comment) => (
+          {commentData.map((comment,index) => (
             <div 
                 className={styles.textBox} 
                 key={comment._id}
                 >
-              <span>
+              <span style={{
+                backgroundColor:colors[index]
+              }}>
                 작성자 아이콘
               </span>
               <div>
@@ -197,18 +214,20 @@ export function Author ({author,handleChangeComment,handleSubmit,handlePopupOpen
                     id="author" 
                     htmlFor=""
                     >
-                    What's your Name ?
+                    작성자명을 입력해주세요! 😀 <br />
+                    <span>이름 또는 닉네임을 입력해주세요!</span>
                 </label>
                 <input 
                     id="author" 
                     onChange={(e) => handleChangeComment('author', e.target.value )} 
                     onKeyDown={(e) => handleKeyDown(e)}
                     value={author} 
+                    maxLength={15}
                     type="text" 
                 />
                 <button onClick={() => handleClick()}
                 >
-                Send</button>
+                완료</button>
             </form>
         </div>
     )
