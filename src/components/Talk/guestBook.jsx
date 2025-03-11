@@ -1,5 +1,6 @@
 import styles from "@/components/Talk/guestBook.module.css"
 import { useEffect, useRef, useState } from "react"
+import { useTheme } from "@/lib/ThemeContext";
 
 
 export function GuestBook () {
@@ -104,8 +105,10 @@ export function GuestBook () {
 
 export function TextBox ({commentData = []}) {
 
+  const { theme } = useTheme();
+
   if(!commentData){
-      return null;
+      return <img className={styles.loading} src={theme === "light" ? "images/Talk/로딩.gif" : "images/Talk/로딩-검.gif"} alt="" />;
   }
 
   const generateRandomColor = () => {
