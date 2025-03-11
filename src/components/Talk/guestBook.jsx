@@ -44,7 +44,7 @@ export function GuestBook () {
 
     const getComments = async () => {
         try {
-          const res = await fetch('http://localhost:3000/api/comment');
+          const res = await fetch('https://whoami-rosy.vercel.app/api/comment');
           if (res.ok) {
             const data = await res.json();
             setCommentData([...data]); 
@@ -150,7 +150,7 @@ export function Author ({author,handleChangeComment,handleSubmit,handlePopupOpen
 
     const postComment = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/comment', {
+            const res = await fetch('https://whoami-rosy.vercel.app/api/comment', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'application/json',
