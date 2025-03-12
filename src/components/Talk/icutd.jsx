@@ -11,7 +11,7 @@ export function Icutd () {
                         <a href="https://github.com/son5000/IncheonUited.git" target="_blank">GitHub</a>
                     </div>
                     <span>
-                        기존 '<b>인천 유나이티드</b>' 공식 홈페이지를 리팩토링한 프로젝트입니다.<br />
+                        기존 '<b>인천 유나이티드</b>' 공식 홈페이지를 새로운 디자인으로 새롭게 재구성해 보았습니다.<br />
                         <b>React</b> 기반의 프론트엔드와 <b>Express</b> 기반의 백엔드로 구성되었습니다.
                     </span>
                     <ul>
@@ -20,6 +20,8 @@ export function Icutd () {
                             <ul>
                                 <li>
                                     <p><b>100% 기여</b>: 프로젝트의 기획, 개발, 배포까지 모든 과정에서 단독으로 진행하였습니다.</p>
+                                    <p>퍼블리싱, 프론트엔드 서버 제작, 백엔드 서버 제작을 진행했으며, <br /> </p>
+                                    <p>디자인 시안은 전문 디자이너에게 의뢰하여 구입해 사용했습니다.</p>
                                 </li>
                             </ul>
                         </li>
