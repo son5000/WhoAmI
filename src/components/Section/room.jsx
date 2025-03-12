@@ -9,13 +9,16 @@ import { WallCharacter } from "./character";
 
 export function Room () {
   
+  const { talkState, setTalkState } = useTalkState();
+
   const [window, setWindow] = useState(false);
   const [bad, setBad] = useState(false);
   const [hanger, setHanger] = useState(false);
   const [character, setCharacter] = useState(false);
   const { theme } = useTheme();
   const [soccer, setSoccer] = useState(false);
-  const { talkState, setTalkState } = useTalkState();
+
+  
 
   const windowSrc = () => {
     const baseSrc = 'images/Section/창문';
@@ -125,7 +128,11 @@ export function Room () {
             onClick={() => handleClickTalkIcon()}
             className={theme == 'light' ? styles.icon : [styles.icon,styles.active].join(' ')}
             >TalkIcon</span>
-          <img className={styles.chair} src="images/Section/의자.png" art="의자 이미지" />
+          <img 
+            className={styles.chair} 
+            src="images/Section/의자.png" 
+            art="의자 이미지" 
+          />
           <img 
             onClick={() => handleClickHanger()}
             className={styles.hanger} 
@@ -137,8 +144,14 @@ export function Room () {
             src={bad ? "/images/Section/침대2.png" : "/images/Section/침대.png"} 
             alt="침대 이미지" />
           {/* <img className={styles.bad} src="/images/Section/싱크대.png" alt="싱크대 이미지" /> */}
-          <img className={styles.desk} src="/images/Section/책상.png" alt="책상 이미지" />
-          <img className={styles.computer} src="/images/Section/컴퓨터.png" alt="컴퓨터 이미지" />
+          <img 
+            className={styles.desk} 
+            src="/images/Section/책상.png" 
+            alt="책상 이미지" />
+          <img 
+            className={styles.computer} 
+            src="/images/Section/컴퓨터.png" 
+            alt="컴퓨터 이미지" />
           <img 
             onClick={ () => handleClickWindow()}
             className={styles.window} 

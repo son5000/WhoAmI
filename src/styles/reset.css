@@ -56,7 +56,7 @@ li {list-style: none;}
 body, html{
     height: 100%; 
     scroll-behavior: smooth; 
-    font-family: "Josefin Sans", "Noto Sans KR" , sans-serif;
+    font-family: "Outfit", "Noto Sans KR" , sans-serif;
 }
 
 a {
@@ -79,4 +79,41 @@ button {
     --theme-dark-font:#a2b492;
     --theme-light-content:#fff;
     --theme-dark-content:#222525;
+
+    --fs-10: 10px;
+    --fs-11: 11px;
+    --fs-12: 12px;
+    --fs-13: 13px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-20: 20px;
+    --fs-22: 22px;
+    --fs-24: 24px;
+    --fs-26: 26px;
+    --fs-28: 28px;
+    --fs-30: 30px;
+    --fs-34: 34px;
+}
+
+@media ( width < 600px) {
+
+    :root {
+        --fs-10: 8px;
+        --fs-11: 9px;
+        --fs-12: 10px;
+        --fs-13: 11px;
+        --fs-14: 12px;
+        --fs-15: 13px;
+        --fs-16: 14px;
+        --fs-18: 16px;
+        --fs-20: 18px;
+        --fs-22: 20px;
+        --fs-24: 22px;
+        --fs-26: 24px;
+        --fs-28: 26px;
+        --fs-30: 28px;
+        --fs-34: 32px;
+    }
 }

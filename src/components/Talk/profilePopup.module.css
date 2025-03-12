@@ -26,9 +26,9 @@
 }
 
 .container > div:nth-of-type(1){
-    padding-inline: 10px;
     margin-bottom: 320px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding-inline: 10px;
 }
 
 .container > div > button {
@@ -45,19 +45,10 @@
 }
 
 .container > div:nth-of-type(1) > button:nth-of-type(1){
-    background-image: url(/images/Talk/profilebg-icon-회.png);
-    width: 25px;
-}
-
-.container > div:nth-of-type(1) > button:nth-of-type(1):hover {
-    background-image: url(/images/Talk/profilebg-icon-검.png);
-}
-
-.container > div:nth-of-type(1) > button:nth-of-type(2){
     background-image: url(/images/Talk/profile-popip-x-회.png);
 }
 
-.container > div:nth-of-type(1) > button:nth-of-type(2):hover {
+.container > div:nth-of-type(1) > button:nth-of-type(1):hover {
     background-image: url(/images/Talk/profile-popip-x-검.png);
 }
 
@@ -73,12 +64,18 @@
     justify-content: center;
     padding-block: 25px;
     font-size: 12px;
+    position: relative;
 }
 
-.container > div:nth-of-type(2) > button::before {
+
+.container > div:nth-of-type(2) > span::before {
     content: url(/images/Talk/introduce.png);
     display: block;
     margin-bottom: 15px;
+    position: absolute;
+    left: 50%;
+    top : 100%;    /* transform: ; */
+    transform: translate(-50% , -50%);
 }
 
 

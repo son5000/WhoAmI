@@ -33,8 +33,6 @@
     flex-basis: 265px;
 }
 
-@media ( width < 1350px ) {}
-
 .container > ul > li > div {
     height: 100%;
     display: flex;
@@ -70,4 +68,33 @@
 
 :global(.dark) .container > ul > li:nth-of-type(n+3)  > div > p > a {
     color: #b9b7b7;
+}
+
+
+@media ( width < 600px ) {
+
+    .container > p {
+        font-size: 12px;
+    }
+    
+    .container > ul {
+        width: 100%;
+        gap: 0px 10px;
+    }
+    
+    .container > ul > li:first-of-type > div > p {
+        cursor: pointer;
+    }
+    
+    .container > ul > li {
+        flex-basis: 100%;
+    }
+
+    .container > ul > li > img {
+        max-width: 50px;
+    }
+    
+    .container > ul > li > div > p {
+        margin-top: 10px;
+    }
 }

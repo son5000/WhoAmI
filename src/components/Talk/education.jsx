@@ -52,10 +52,10 @@ export function Education () {
                         3. 자격증 
                         <ul>
                             <li>
-                                <b>2025년 3월</b> : SQLD
+                                <b>2025년 4월</b> : SQLD
                             </li>
                             <li>
-                                <b>2025년 4월</b> : 정보처리 산업 기사
+                                <b>2025년 5월</b> : 정보처리 산업 기사
                             </li>
                         </ul>
                     </li>

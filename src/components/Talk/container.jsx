@@ -8,6 +8,7 @@ export function TalkContainer () {
     const [ currentTab, setCurrentTab ]  = useState('profile');
 
     const handleChangeTab = (current) => {
+        
         if(current == currentTab) return;
 
         return setCurrentTab(current);

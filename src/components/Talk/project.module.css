@@ -6,12 +6,12 @@
 
 .textBox{
     width: 70%;
-    font-size: 14px;
+    font-size: var(--fs-14);
 }
 
 
 .textBox > p {
-    font-size: 34px;
+    font-size: var(--fs-34);
     font-weight: 900;
     margin-bottom: 10px;
 }
@@ -71,7 +71,7 @@
 }
 
 .textBox > ul > li {
-    font-size: 24px;
+    font-size: var(--fs-24);
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -82,12 +82,12 @@
     font-weight: 600;
     line-height: 25px;
     text-indent: 10px;
-    font-size: 18px;
+    font-size: var(--fs-18);
 }
 
 .textBox > ul > li > ul > li > p {
     margin-left: 30px;
-    font-size: 14px;
+    font-size: var(--fs-14);
     position: relative;
     font-weight: 400;
     line-height: 30px;
@@ -165,13 +165,13 @@
     grid-column: span 1;
 }
 
-@media ( width < 950px  ){
+@media ( width < 950px ){
     .container {
         flex-wrap: wrap;
     }
     .textBox{
         width: 100%;
-        font-size: 14px;
+        font-size: var(--fs-14);
     }
 }
 

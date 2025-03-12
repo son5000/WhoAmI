@@ -69,8 +69,8 @@ export function CopyEamil ({copied, setCopied}) {
     const copyEmail = () => {
         navigator.clipboard.writeText(email)
             .then(() => {
-                setCopied(true); // 복사 성공 시 copied 상태 true로 설정
-                setTimeout(() => setCopied(false), 2000); // 3초 후 복사 메시지 숨기기
+                setCopied(true); 
+                setTimeout(() => setCopied(false), 2000); 
             })
             .catch(err => {
                 console.error('Failed to copy text:', err);

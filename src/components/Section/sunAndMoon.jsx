@@ -4,6 +4,8 @@ import styles from "@/components/Section/sunAndMoon.module.css"
 
 export function SunAndMoon () {
     const { theme, setTheme } = useTheme();
+    const [ isMoved, setIsMoved ] = useState('firstMove');
+    const [src, setSrc ] = useState('/images/Section/태양.png')
 
     const handleThemeChange = () => {
         if(theme === 'light'){
@@ -13,23 +15,20 @@ export function SunAndMoon () {
         }
     }
 
-    const [ isMoved, setIsMoved ] = useState('firstMove');
-    const [src, setSrc ] = useState('/images/Section/태양.png')
-    
     useEffect(() => {         
         
-            if (theme === 'light') { // 예시: theme이 'light'일 경우
+            if (theme === 'light') { 
                 setTimeout(() => {
-                    setSrc('/images/Section/태양.png'); // 태양 이미지
+                    setSrc('/images/Section/태양.png'); 
                 },700);
-                setIsMoved('move'); // 애니메이션: move
+                setIsMoved('move'); 
             } else {
                 setTimeout(() => {
-                    setSrc('/images/Section/달.png'); // 달 이미지
+                    setSrc('/images/Section/달.png'); 
                 }, 700);
-                setIsMoved('reverse'); // 애니메이션: reverse
+                setIsMoved('reverse'); 
         }
-      }, [theme]); // theme 값이 변경될 때마다 실행
+      }, [theme]); 
       
       useEffect(() => {
           setIsMoved('firstMove'); 

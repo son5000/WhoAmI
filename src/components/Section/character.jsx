@@ -1,8 +1,8 @@
 import styles from "@/components/Section/character.module.css"
-import { plugin } from "mongoose"
 import { useState } from "react"
 
 export function Character ({handleCharacter,hanger,character,bad,window}) {
+
     return (
         <> 
             {!hanger && <span className={styles.speechBubble}>
@@ -55,9 +55,7 @@ export function ShootCharacter () {
 
     return (
         <>
-            <div 
-              className={ [styles.ShootCharacter].join(' ')}
-            >
+            <div className={ [styles.ShootCharacter].join(' ')}>
               <span className={styles.head}>머리</span>
               <span className={styles.leftHand}>왼쪽팔</span>
               <span className={styles.body}>몸통</span>
@@ -74,7 +72,9 @@ export function WallCharacter () {
     const [police, setPolice ] = useState(false);
 
     const handleClick = () => {
+
         setPolice(true);
+
         setTimeout(() => {
             setPolice(false);
         },3500)
@@ -84,7 +84,7 @@ export function WallCharacter () {
     <div className={styles.WallCharacter}>
         { police && <img src="images/Section/경찰차.png" alt="경찰차 이미지" />}
         <div onClick={() => handleClick()}
-        className={police && styles.hide}
+             className={police ? styles.hide : ""}
         >
             { police && <strong>!</strong> }
             <span className={styles.WallHead}>머리</span>

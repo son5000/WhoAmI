@@ -6,10 +6,21 @@ import { useTheme } from "@/lib/ThemeContext";
 export function GuestBook () {
     const [ openAuthor,  setOpenAuthor ] = useState(false);
     const [ commentData,  setCommentData ] = useState(null);
+    const [ colors, setColors] = useState(null);
     const [ comment, setComment ] = useState({
         author : '',
         message : ''
     })
+
+  const generateRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
 
     const handleChangeComment = (type,value = '') => {
         if(type === 'reset'){
@@ -48,7 +59,8 @@ export function GuestBook () {
           const res = await fetch('https://whoami-rosy.vercel.app/api/comment');
           if (res.ok) {
             const data = await res.json();
-            setCommentData([...data]); 
+            setCommentData([...data]);
+            setColors([...data].map(generateRandomColor))
           } else {
             setError('데이터를 불러오는 데 문제가 발생했습니다.');
           }
@@ -77,8 +89,10 @@ export function GuestBook () {
             <div ref={scrollContainerRef}>
                 <TextBox 
                     commentData={commentData}
-                    setCommentData={setCommentData} 
-                    />
+                    setCommentData={setCommentData}
+                    colors={colors}
+
+                 />
             </div>
             <form onSubmit={handleSubmit}>
                 <textarea onChange={(e) => handleChangeComment('message',e.target.value)}
@@ -103,28 +117,13 @@ export function GuestBook () {
 }
 
 
-export function TextBox ({commentData = []}) {
+export function TextBox ({commentData = [],colors}) {
 
   const { theme } = useTheme();
 
   if(!commentData){
       return <img className={styles.loading} src={theme === "light" ? "images/Talk/로딩.gif" : "images/Talk/로딩-검.gif"} alt="" />;
   }
-
-  const generateRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-
-
-  const [colors, setColors] = useState(
-    commentData.map(() => generateRandomColor())
-  );
-
 
     return (
         <div>
