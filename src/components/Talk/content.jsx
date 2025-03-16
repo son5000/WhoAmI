@@ -21,7 +21,7 @@ export function TalkContent ({currentTab}) {
                 <button onClick={() => setTalkState(!talkState)}>닫기</button>
               </div>
               <div className={styles.title}>
-                <p>Hi There :-)</p>
+                <p>Profile</p>
                 <ThemeButton />
               </div>
               <div className={styles.profile}>
@@ -46,7 +46,7 @@ export function TalkContent ({currentTab}) {
                 <button onClick={() => setTalkState(!talkState)}>닫기</button>
               </div>
               <div className={styles.title}>
-                <p>GuestBook📚</p>
+                <p>GuestBook</p>
                 <ThemeButton />
               </div>
               <div className={styles.profile}>
