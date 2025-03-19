@@ -14,7 +14,7 @@ export function Contact () {
             <ul>
                 <li>
                     <img src={theme === "light" ? "/images/Talk/이메일-검.png" : "/images/Talk/이메일-흰.png"}
-                         alt="" 
+                         alt="이메일 아이콘" 
                     />
                     <div>
                         <strong>E-MAIL</strong>
@@ -23,16 +23,16 @@ export function Contact () {
                 </li>
                 <li>
                     <img src={theme === "light" ? "/images/Talk/전화-검.png" : "/images/Talk/전화-흰.png"}
-                         alt="" 
+                         alt="전화 아이콘" 
                     />
                     <div>
                         <strong>TEL</strong>
-                        <p>+82:010-9948-8717</p>
+                        <p>010-9948-8717</p>
                     </div>
                 </li>
                 <li>
                     <img src={theme === "light" ? "/images/Talk/깃허브-검.png" : "/images/Talk/깃허브-흰.png"}
-                         alt="" 
+                         alt="깃허브 아이콘" 
                     />
                     <div>
                         <strong>GITHUB</strong>
@@ -41,7 +41,7 @@ export function Contact () {
                 </li>
                 <li>
                     <img src={theme === "light" ? "/images/Talk/노션-검.png" : "/images/Talk/노션-흰.png"}
-                         alt="" 
+                         alt="노션 아이콘" 
                     />
                     <div>
                         <strong>NOTION</strong>
@@ -50,7 +50,7 @@ export function Contact () {
                 </li>
                 <li>
                     <img src={theme === "light" ? "/images/Talk/인스타-검.png" : "/images/Talk/인스타-흰.png"}
-                         alt="" 
+                         alt="인스타 아이콘" 
                     />
                     <div>
                         <strong>INSTA</strong>

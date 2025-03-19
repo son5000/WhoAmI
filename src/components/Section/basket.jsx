@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal"
 import styles from "@/components/Section/basket.module.css"
+import { useTalkState } from "@/lib/TalkStateContext";
 
 export function Basket () {
 
     const [popupOpen, setPopupOpen] = useState(false);
+
+    const { talkState } = useTalkState();
 
     function handlePopupOpen ()  {
         return setPopupOpen(!popupOpen)
@@ -18,7 +21,11 @@ export function Basket () {
         <div className={styles.container}>
             <span onClick={handlePopupOpen}>휴지통</span>
             {popupOpen && 
-            <div className={styles.inner}>
+            <div className={styles.inner}
+                style={{
+                    left: talkState ? "59%" : "50%",
+                }}
+                >
                 <div className={styles.header}>
                     <p>휴지통</p>
                     <div className={styles.windowButtons}>
