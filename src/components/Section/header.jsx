@@ -4,27 +4,27 @@ import { useEffect, useState } from "react";
 
 export function Header () {
 
-    const [ currentTime, setCurrentTime ] = useState(new Date());
+    // const [ currentTime, setCurrentTime ] = useState(new Date());
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTime(new Date());
-        },60000)
-        return () => clearInterval(interval);
-    },[]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentTime(new Date());
+    //     },60000)
+    //     return () => clearInterval(interval);
+    // },[]);
 
-    const today = currentTime;
-    const formatedDate = format(today , 'yyyy-MM-dd--hh--mm')
-    const date =formatedDate.split('--')[0];
-    const hours = formatedDate.split('--')[1];
-    const minutes = formatedDate.split('--')[2];
-    const period = hours >= 12 ? '오전' : '오후';
+    // const today = currentTime;
+    // const formatedDate = format(today , 'yyyy-MM-dd--hh--mm')
+    // const date =formatedDate.split('--')[0];
+    // const hours = formatedDate.split('--')[1];
+    // const minutes = formatedDate.split('--')[2];
+    // const period = hours >= 12 ? '오전' : '오후';
 
     return (
         <div className={styles.header}>
             <img src="/images/Section/wifi_icon.png" alt="와이파이 아이콘" />
             <img src="/images/Section/energy_icon.png" alt="배터리 아이콘" />
-            <p>{date} {period} {hours}:{minutes}</p>
+            {/* <p>{date} {period} {hours}:{minutes}</p> */}
         </div>
     )
 }

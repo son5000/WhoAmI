@@ -1,6 +1,5 @@
 import styles from "@/components/Talk/Theme_button.module.css"
 import { useTheme } from "@/lib/ThemeContext";
-import { useState } from "react"
 
 export function ThemeButton () {
 
