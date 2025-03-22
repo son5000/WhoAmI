@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  perspective: 20000px;
   transform: rotateX(-60deg) rotateY(45deg);
 }
 

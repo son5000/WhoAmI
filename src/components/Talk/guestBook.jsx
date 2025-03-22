@@ -6,21 +6,10 @@ import { useTheme } from "@/lib/ThemeContext";
 export function GuestBook () {
     const [ openAuthor,  setOpenAuthor ] = useState(false);
     const [ commentData,  setCommentData ] = useState(null);
-    const [ colors, setColors] = useState(null);
     const [ comment, setComment ] = useState({
         author : '',
         message : ''
     })
-
-  const generateRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-
 
     const handleChangeComment = (type,value = '') => {
         if(type === 'reset'){
@@ -56,11 +45,10 @@ export function GuestBook () {
 
     const getComments = async () => {
         try {
-          const res = await fetch('https://whoami-rosy.vercel.app/api/comment');
+          const res = await fetch('http://localhost:3000/api/comment');
           if (res.ok) {
             const data = await res.json();
             setCommentData([...data]);
-            setColors([...data].map(generateRandomColor))
           } else {
             setError('데이터를 불러오는 데 문제가 발생했습니다.');
           }
@@ -90,8 +78,6 @@ export function GuestBook () {
                 <TextBox 
                     commentData={commentData}
                     setCommentData={setCommentData}
-                    colors={colors}
-
                  />
             </div>
             <form onSubmit={handleSubmit}>
@@ -117,7 +103,7 @@ export function GuestBook () {
 }
 
 
-export function TextBox ({commentData = [],colors}) {
+export function TextBox ({commentData = []}) {
 
   const { theme } = useTheme();
 
@@ -127,16 +113,11 @@ export function TextBox ({commentData = [],colors}) {
 
     return (
         <div>
-          {commentData.map((comment,index) => (
+          {commentData.map((comment) => (
             <div 
                 className={styles.textBox} 
                 key={comment._id}
                 >
-              <span style={{
-                backgroundColor:colors[index]
-              }}>
-                작성자 아이콘
-              </span>
               <div>
                 <p>{comment.author}</p> {/* 댓글 작성자 */}
                 <div className={styles.speechBubble}>{comment.message}</div> {/* 댓글 내용 */}

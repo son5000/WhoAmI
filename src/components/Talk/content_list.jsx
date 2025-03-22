@@ -1,7 +1,6 @@
 import styles from "@/components/Talk/content_list.module.css"
 import { useState } from "react"
 import { MainPopup } from "./mainPopup";
-import { guestBook } from "./guestBook";
 
 export function TalkList ({currentTab}) {
 
@@ -75,6 +74,15 @@ export function TalkList ({currentTab}) {
                                     }}>
                                         <img src="images/Section/icon_light.png" alt="" />
                                         <p>WhoAmI</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div onClick={(e) => {
+                                        handleChildClick(e);
+                                        handleIconClick('Gamdong');
+                                    }}>
+                                        <img src="images/Talk/gamdong.png" alt="" />
+                                        <p>Gamdong</p>
                                     </div>
                                 </li>
                             </ul>

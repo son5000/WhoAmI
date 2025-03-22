@@ -4,6 +4,7 @@ import { Icutd } from "./icutd";
 import { Contact } from "./contact";
 import { GuestBook } from "./guestBook";
 import { WhoAmI } from "./whoami";
+import { Gamdong } from "./gamdong";
 
 export function MainPopup ({ handleClose, category }) {
     
@@ -24,6 +25,7 @@ export function Content ({ category }) {
         case 'Icutd' : return <Icutd />;
         case 'WhoAmI' : return <WhoAmI />;
         case 'Contact' : return <Contact />;
+        case 'Gamdong' : return <Gamdong />;
         case 'GuestBook' : return <GuestBook className={styles.guestBook}/>
         default :
             return null;
