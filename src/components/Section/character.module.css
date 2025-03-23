@@ -1,9 +1,9 @@
 .character {
-    left: 250px;
-    bottom: 80px;
+    left: 275px;
+    bottom: 130px;
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,19 +27,19 @@
   }
   
   .character > span ,.ShootCharacter > span {
-    background-color: white;
     text-indent: -9999px;
-    border: 1px solid rgb(156, 155, 155);
   }
   
   
   .charLeft {
-    left: 230px;
+    left: 235px;
+    bottom: 120px;
     transform: rotateZ(-30deg);
     z-index: 9;
   }
   .charRight {
-    left: 270px;
+    left: 315px;
+    bottom: 120px;
     transform: rotateZ(30deg);
   }
   
@@ -48,12 +48,15 @@
   }
 
   .head {
-    width: 18px;
-    height: 18px;
-    border-radius: 100%;
+    width: 30px;
+    border: 0;
+    background-color: transparent;
     position: relative;
+    background: url(/images/Section/정면머리.png) no-repeat center / cover;
   }
-  
+
+
+
   /* 모자 입히기 */
   .character.active::before{
     content: '';
@@ -74,17 +77,30 @@
     width: 20px;
     height: 25px;
     left: 50%;
-    top: 32px;
+    top: 43px;
     transform: translate(-50%, -50%);
     background: url(/images/Section/옷.png);
-    border-radius: 8px;
+  }
+
+  .character.active .leftHand {
+    left: 55px;
+  }
+  .character.active .rightHand {
+    left: 90px;
+  }
+  .character.active .leftLeg {
+    left: 65px;
+  }
+  .character.active .rightLeg {
+    left: 80px;
   }
   
   .body {
-    top: 20px;
+    top: 30px;
     width: 20px;
     height: 26px;
-    border-radius: 8px;
+    background-color: rgb(27, 116, 27);
+    border-radius: 2px;
     position: relative;
   }
   
@@ -122,11 +138,11 @@
   }
   
   .leftHand {
-    top: 5px;
-    right: 83px;
+    top: 10px;
+    left: 30px;
     width: 5px;
     height: 20px;
-    border-radius: 8px;
+    background: url(/images/Section/팔.png) no-repeat center / contain;
     transform: rotate(-15deg);
     animation-name: rotateAnimation;
     animation-duration: 1s;
@@ -139,13 +155,17 @@
     animation: none;
     transform-origin: top;
     transform: rotate(30deg);
-    top: 20px;
+    top: 35px;
     height: 15px;
+    left: 35px;
+    background: url(/images/Section/팔기본.png) no-repeat center / contain;
   }
   
   .charLeft .leftHand {
+    top: 10px;
+    left: 35px;
     animation: none;
-    transform: rotate(-110deg);
+    transform: rotate(300deg);
   }
   
   
@@ -153,23 +173,25 @@
     animation: none;
     transform: rotate(-160deg);
     height: 15px;
-    top: 10px;
+    top: 20px;
+    left: 34px;
   }
   
   
   .rightHand {
-    top: 22px;
-    right: 59px;
+    top: 32px;
+    right: 32px;
     width: 5px;
     height: 20px;
-    border-radius: 8px;
+    background: url(/images/Section/팔기본.png) no-repeat center / contain;
   }
   
   .charCenter > .rightHand {
     height: 15px;
     transform-origin: top;
     transform: rotate(-30deg);
-    right: 60px;
+    top: 35px;
+    right: 35px;
   }
   
   .charLeft > .rightHand {
@@ -179,24 +201,28 @@
   
   .charRight > .rightHand {
     transform-origin: top;
-    right: 60px;
-    transform: rotate(-70deg);
+    right: 35px;
+    top: 30px;
+    transform: rotate(230deg);
+    z-index: 99999;
   }
   
   .rightLeg {
-    right: 66px;
-    top: 48px;
+    right: 40px;
+    top: 58px;
     width: 6px;
     height: 25px;
     border-radius: 8px;
+    background: url(/images/Section/다리오른쪽.png) no-repeat center / cover;
   }
   
   .leftLeg {
-    right: 78px;
-    top: 48px;
+    right: 54px;
+    top: 58px;
     width: 6px;
     height: 25px;
     border-radius: 8px;
+    background: url(/images/Section/다리왼쪽.png) no-repeat center / cover;
   }
   
   
@@ -205,16 +231,16 @@
       transform: rotate(-10deg);
     }
     50% {
-      transform: rotate(-45deg); /* 왼쪽으로 45도 회전 */
+      transform: rotate(-45deg); 
     }
     100% {
-      transform: rotate(-10deg); /* 오른쪽으로 45도 회전 */
+      transform: rotate(-10deg); 
   }
 }
 
 .ShootCharacter {
-  left: 280px;
-    bottom: 80px;
+    left: 290px;
+    bottom: 95px;
     position: absolute;
     width: 150px;
     height: 150px;
@@ -226,24 +252,16 @@
     z-index: 3;
   }
   
-  .leftHand {
-    top: 5px;
-    right: 83px;
-    width: 5px;
-    height: 20px;
-    border-radius: 8px;
-    transform: rotate(-15deg);
-    animation-name: rotateAnimation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform-origin: bottom;
-  }
+
+.ShootCharacter .head {
+  background: url(/images/Section/옆면머리.png) no-repeat center / contain ;
+}
 
 .ShootCharacter .leftHand {
     animation: none;
     transform: rotate(150deg);
-    right: 75px;
+    left: 70px;
+    top: 15px;
     z-index: 9999;
     animation: shootHand 1s ease-in-out forwards;   
 }
@@ -256,10 +274,12 @@
     transform-origin: top;
     animation: shootLeft 1s ease-in-out forwards;   
     z-index: 9999; 
+    left: 71px;
   }
   
   .ShootCharacter .rightLeg {
     animation: shootRight 1s ease-in-out forwards;   
+    left: 72px;
     
 }
 
