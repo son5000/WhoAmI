@@ -32,7 +32,9 @@ export function WhoAmI () {
                                 </li>
                                 <li>
                                     2. <b>Light / Dark 테마 변경</b>
-                                    <p>Context API와 Next.js의 CSS :global 선택자를 활용하여 사용자가 선택한 테마에 맞춰 라이트 모드와 다크 모드를 지원하는 기능을 구현했습니다.</p> 
+                                    <p>Context API와 Next.js의 CSS :global 선택자를 활용하여 사용자가 선택한 테마에 맞춰
+                                    <p>라이트 모드와 다크 모드를 지원하는 기능을 구현했습니다.</p>
+                                    </p> 
                                     <p>애니메이션 요소와 연계하여 테마에 따라 다른 애니메이션을 보여주는 기능을 추가했습니다.</p>
                                 </li>
                                 <li>
