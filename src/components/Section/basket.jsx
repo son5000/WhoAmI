@@ -38,7 +38,7 @@ export function Basket () {
                 <div className={styles.section}>
                     <ul className={styles.list}>
                         <li>즐겨찾기</li>
-                        <li>oneDrive - personal</li>
+                        <li>oneDrive</li>
                         <li>내 PC</li>
                         <li>네트워크</li>
                         <li>Linux</li>
