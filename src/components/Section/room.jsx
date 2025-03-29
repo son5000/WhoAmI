@@ -151,11 +151,6 @@ export function Room() {
         alt="책상 이미지"
       />
       <img
-        className={styles.computer}
-        src="/images/Section/컴퓨터.png"
-        alt="컴퓨터 이미지"
-      />
-      <img
         onClick={() => handleClickWindow()}
         className={styles.window}
         src={windowSrc()}

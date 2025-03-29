@@ -89,8 +89,9 @@
 
 .hanger{
   position: absolute;
-  bottom: 290px;
-  right: 175px;
+  max-width: 40px;
+  bottom: 320px;
+  right: 215px;
   cursor: pointer;
   z-index: 2;
 }
@@ -105,33 +106,27 @@
 .bad {
   cursor: pointer;
   position: absolute;
-  bottom: 235px;
-  right: 150px;
+  bottom: 210px; 
+  right: 140px;
   z-index: 2;
+  width: 130px;
+  height: 105px;
 }
 
 .desk {
   position: absolute;
-  right: 350px;
-  bottom: 210px;
-  transform: rotate(5deg);
+  right: 380px;
+  bottom: 180px;
   z-index: 2;
 }
 
-.computer {
-  position: absolute;
-  right: 400px;
-  bottom: 260px;
-  transform: rotate(5deg);
-  z-index: 2;
-}
 
 .window {
+  width: 80px;
   position: absolute;
   right: 350px;
-  bottom: 366px;
+  bottom: 346px;
   cursor: pointer;
-  transform: rotate(-20deg);
   z-index: 2;
 }
 
