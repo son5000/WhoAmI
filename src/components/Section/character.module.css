@@ -1,6 +1,6 @@
 .character {
     left: 275px;
-    bottom: 130px;
+    bottom: 140px;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -33,13 +33,13 @@
   
   .charLeft {
     left: 235px;
-    bottom: 120px;
+    bottom: 130px;
     transform: rotateZ(-30deg);
     z-index: 9;
   }
   .charRight {
     left: 315px;
-    bottom: 120px;
+    bottom: 130px;
     transform: rotateZ(30deg);
   }
   
