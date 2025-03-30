@@ -36,6 +36,13 @@
   background-image: url(/images/Section/오른쪽벽.png);
 }
 
+/* .left {
+  width: 354px;
+  height: 440px;
+  transform: rotateY(0deg) translateZ(0px) translateX(0px) ;
+  background-image: url(/images/Section/오른쪽벽.png);
+} */
+
 .right { 
   width: 241px;
   height: 441px;
@@ -111,6 +118,7 @@
   z-index: 1;
   width: 130px;
   height: 105px;
+  /* object-fit: contain; */
 }
 
 .desk {

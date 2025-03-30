@@ -105,7 +105,7 @@ export function Room() {
   return (
     <div className={styles.container}>
       <SunAndMoon />
-      <WallCharacter />
+      {/* <WallCharacter /> */}
       <div className={styles.cube}>
         <div className={styles.left}></div>
         <div className={styles.right}></div>
