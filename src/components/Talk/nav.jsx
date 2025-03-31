@@ -37,13 +37,13 @@ export function TalkNav ({currentTab, handleChangeTab}) {
                                 alt="notion icon" />
                     </a>
                 </li>
-                <li>
+                {/* <li>
                     <a target="_blank" href="https://www.instagram.com/sxnlikecoye_?igsh=OGhmMnBhZWpmZGRy&utm_source=qr">
                         <img src={theme === 'light' ? 
                                 "/images/Talk/instagram.png" : "/images/Talk/insta-icon-dark.png"}
                                 alt="instagram icon" />
                     </a>
-                </li>
+                </li> */}
             </ul>
         </nav>
     )

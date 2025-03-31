@@ -4,7 +4,7 @@ export const TalkStateContext = createContext();
 
 export function TalkStateProvider ({ children }) {
 
-    const [ talkState, setTalkState ] = useState(false);
+    const [ talkState, setTalkState ] = useState(true);
 
     return (
         <TalkStateContext.Provider value={ {talkState, setTalkState} }>
