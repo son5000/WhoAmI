@@ -50,7 +50,7 @@ export function Folder () {
                         </p>
                         <ul>
                             <li>
-                                <a href="" target="https://icutd.netlify.app/" rel="noopener noreferrer">
+                                <a href="https://icutd.netlify.app/" target="_blank" rel="noopener noreferrer">
                                     <div>
                                         <img src="/images/Talk/인천.png" alt="" />
                                         인천유나이티드
