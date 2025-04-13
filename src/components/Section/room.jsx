@@ -156,7 +156,7 @@ export function Room() {
         src={windowSrc()}
         alt="창문 이미지"
       />
-      <Basket />
+      {/* <Basket /> */}
       <span
         onClick={() => handleClickSoccer()}
         className={soccer ? [styles.soccerBall, styles.shoot].join(' ') : styles.soccerBall}

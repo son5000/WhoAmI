@@ -22,7 +22,7 @@ export function TalkContent ({currentTab}) {
               </div>
               <div className={styles.title}>
                 <p>Profile</p>
-                <ThemeButton />
+                {/* <ThemeButton /> */}
               </div>
               <div className={styles.profile}>
                 <img 
@@ -47,7 +47,7 @@ export function TalkContent ({currentTab}) {
               </div>
               <div className={styles.title}>
                 <p>GuestBook</p>
-                <ThemeButton />
+                {/* <ThemeButton /> */}
               </div>
               <div className={styles.profile}>
                 <img 

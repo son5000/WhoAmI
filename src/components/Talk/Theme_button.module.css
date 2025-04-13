@@ -1,6 +1,6 @@
 .themeButton {
-    width: 100px;
-    height: 20px;
+    width: 200px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,33 +9,34 @@
 
 .themeButton > button {
     cursor: pointer;
-    width: 40px;
+    width: 100px;
+    height: 50px;
     text-indent: -9999px;
-    background: url(/images/Talk/lightmode.png) no-repeat center / contain;
+    background: url(/images/Talk/스위치라이트.png) no-repeat center / auto;
 }
 
 .themeButton > button::before{
     content: "";
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     background: url(/images/Talk/sun.png) no-repeat center / cover;
     top: 50%;
-    left: 15%;
-    transform: translate( -50% , -50%);
+    left: 30px;
+    transform: translate( 0% , -50%);
 }
 
 .themeButton > button::after{
     content: "";
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     background: url(/images/Talk/moon.png) no-repeat center / cover;    
     top: 50%;
-    right: 5%;
-    transform: translate( -50% , -50%);
+    right: 30px;
+    transform: translate( 0% , -50%);
 }
 
  .themeButton > button.active {
-    background-image : url(/images/Talk/darkmode.png);
+    background-image : url(/images/Talk/스위치다크.png);
 }

@@ -1,7 +1,13 @@
 @import 'reset.css';
 
 
-body.light{background-color: var(--theme-light)}
+body.light{
+    background-color: var(--theme-light);
+    background: url(/images/Section/배경라이트2.jpg) no-repeat center / cover ;
+}
 
-body.dark{background-color: var(--theme-dark)}
+body.dark{
+    background-color: var(--theme-dark);
+    background: url(/images/Section/배경다크2.jpg) no-repeat center / cover ;
+}
 
